@@ -564,9 +564,14 @@ export default function Home() {
               <div className="bg-[#96724D]/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="text-[#96724D]" size={24} />
               </div>
-              <h4 className="font-playfair text-lg text-[#2A343E] mb-2">Teléfono</h4>
-              <a href="tel:+34665029116" className="font-inter text-sm text-gray-600 hover:text-[#96724D] transition-colors">
-                +34 665 029 116
+              <h4 className="font-playfair text-lg text-[#2A343E] mb-2">WhatsApp</h4>
+              <a 
+                href="https://wa.me/34650294987?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-inter text-sm text-gray-600 hover:text-[#96724D] transition-colors"
+              >
+                +34 650 294 987
               </a>
             </div>
 
