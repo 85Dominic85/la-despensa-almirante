@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Anchor, Ship, Award, Mail, Phone, MapPin, ChevronRight, Waves, Sun, Users } from 'lucide-react';
+import { Anchor, Ship, Award, Mail, Phone, MapPin, ChevronRight, Waves, Sun, Users, ArrowUp } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -12,6 +12,26 @@ export default function Home() {
     message: '',
   });
 
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Mostrar/ocultar botón Back to Top según scroll
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    });
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -20,15 +40,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#2A343E]">
-      {/* Navigation con LOGO */}
+      {/* Navigation con LOGO MÁS GRANDE */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            {/* LOGO DE LA EMPRESA */}
+            {/* LOGO DE LA EMPRESA - MÁS GRANDE */}
             <img 
               src="/logo.png" 
               alt="La Despensa del Almirante" 
-              className="h-14 w-auto"
+              className="h-20 w-auto"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 const parent = e.currentTarget.parentElement;
@@ -576,17 +596,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#2A343E] text-white py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          {/* Logo en el footer también */}
+          {/* Logo DORADO en el footer - MÁS GRANDE */}
           <img 
-            src="/logo.png" 
+            src="/logo-dorado.png" 
             alt="La Despensa del Almirante" 
-            className="h-16 mx-auto mb-6"
+            className="h-24 w-auto mx-auto mb-6"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
               const parent = e.currentTarget.parentElement;
               if (parent) {
                 const text = document.createElement('p');
-                text.className = 'font-playfair text-xl font-bold mb-4';
+                text.className = 'font-playfair text-xl font-bold mb-4 text-[#96724D]';
                 text.textContent = 'La Despensa del Almirante';
                 parent.appendChild(text);
               }
@@ -604,6 +624,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Botón Back to Top */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-[#96724D] hover:bg-[#2A343E] text-white p-4 rounded-full shadow-2xl transition-all duration-300 z-50 group"
+          aria-label="Volver arriba"
+        >
+          <ArrowUp size={24} className="group-hover:scale-110 transition-transform" />
+        </button>
+      )}
     </main>
   );
 }
