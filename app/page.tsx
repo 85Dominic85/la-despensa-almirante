@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Anchor, Ship, Award, Mail, Phone, MapPin, ChevronRight, Waves, Sun, Users, ArrowUp } from 'lucide-react';
+import { Anchor, Ship, Award, Mail, Phone, MapPin, ChevronRight, Waves, Sun, Users, ArrowUp, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -566,12 +566,12 @@ export default function Home() {
               </div>
               <h4 className="font-playfair text-lg text-[#2A343E] mb-2">WhatsApp</h4>
               <a 
-                href="https://wa.me/34650294987?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante" 
+                href="https://wa.me/34610637068?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-inter text-sm text-gray-600 hover:text-[#96724D] transition-colors"
               >
-                +34 650 294 987
+                Contactar por WhatsApp
               </a>
             </div>
 
@@ -580,8 +580,8 @@ export default function Home() {
                 <Mail className="text-[#96724D]" size={24} />
               </div>
               <h4 className="font-playfair text-lg text-[#2A343E] mb-2">Email</h4>
-              <a href="mailto:info@ladespensadelmirante.com" className="font-inter text-sm text-gray-600 hover:text-[#96724D] transition-colors">
-                info@despensadelmirante.com
+              <a href="mailto:contacto@ladespensadelalmirante.com" className="font-inter text-sm text-gray-600 hover:text-[#96724D] transition-colors break-all">
+                contacto@ladespensadelalmirante.com
               </a>
             </div>
 
@@ -629,6 +629,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Botón flotante de WhatsApp - Solo icono */}
+      <a
+        href="https://wa.me/34610637068?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 left-8 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl transition-all duration-300 z-50 group animate-pulse hover:animate-none"
+        aria-label="Contactar por WhatsApp"
+      >
+        <MessageCircle size={28} className="group-hover:scale-110 transition-transform" fill="white" />
+      </a>
 
       {/* Botón Back to Top */}
       {showBackToTop && (
