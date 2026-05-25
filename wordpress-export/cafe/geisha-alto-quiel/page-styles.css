@@ -1,0 +1,544 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LA DESPENSA DEL ALMIRANTE — Estilos página /cafe/geisha-alto-quiel
+   PEGAR EN: wp-admin → Apariencia → Personalizar → CSS adicional
+   ⚠️  Sustituir XXXX por el post-id real de WordPress antes de pegar
+   Scoped a body.page-id-XXXX (no afecta a otras páginas)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Variables (scoped a la página) ────────────────────────────────── */
+body.page-id-XXXX {
+  --epg-navy: #2A343E;
+  --epg-gold: #96724D;
+  --epg-gold-hover: #7a5a3a;
+  --epg-gold-soft: #f9c06a;
+  --epg-coffee: #603809;
+  --epg-cream: #FDFBF7;
+  --epg-cream-warm: #fff9f1;
+  --epg-cream-amber: #FCEFD9;
+  --epg-gray: #707070;
+  --epg-white: #FFFFFF;
+  --epg-wa: #25D366;
+
+  --epg-font-display: 'Playfair Display', Georgia, serif;
+  --epg-font-body: 'Inter', sans-serif;
+
+  --epg-container-max: 1200px;
+  --epg-section-pad-y: clamp(40px, 5vw, 72px);
+  --epg-section-pad-x: clamp(20px, 4vw, 40px);
+  --epg-card-radius: 20px;
+  --epg-btn-radius: 9999px;
+  --epg-btn-pad: 12px 28px;
+  --epg-btn-size: 14px;
+  --epg-cta-mt: clamp(24px, 3vw, 40px);
+  --epg-card-shadow: 0 4px 16px rgba(42,52,62,0.08);
+  --epg-card-shadow-hover: 0 16px 40px rgba(42,52,62,0.15);
+  --epg-transition: 0.3s ease;
+
+  background: var(--epg-cream);
+  color: var(--epg-navy);
+}
+
+/* ── Fuentes ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+/* ── Reset (scoped a .epg-page) ──────────────────────────────────────── */
+body.page-id-XXXX .epg-page,
+body.page-id-XXXX .epg-page *,
+body.page-id-XXXX .epg-page *::before,
+body.page-id-XXXX .epg-page *::after {
+  box-sizing: border-box;
+}
+body.page-id-XXXX .epg-page * { margin: 0; padding: 0; }
+
+body.page-id-XXXX .epg-page {
+  font-family: var(--epg-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--epg-navy);
+}
+body.page-id-XXXX .epg-page p:empty { display: none !important; }
+body.page-id-XXXX .epg-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Layout / Container ──────────────────────────────────────────────── */
+body.page-id-XXXX .epg-container {
+  max-width: var(--epg-container-max);
+  margin: 0 auto;
+  padding-inline: var(--epg-section-pad-x);
+}
+body.page-id-XXXX .epg-section {
+  padding: var(--epg-section-pad-y) 0;
+}
+body.page-id-XXXX .epg-section--white { background: var(--epg-white); }
+body.page-id-XXXX .epg-section--navy {
+  background: var(--epg-navy);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Grid ────────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+body.page-id-XXXX .epg-grid--2col { grid-template-columns: 1fr; }
+body.page-id-XXXX .epg-grid--4col { grid-template-columns: 1fr; gap: 1.5rem; }
+
+/* ── Tipografías ─────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-title {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--epg-coffee);
+}
+body.page-id-XXXX .epg-title--hero {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+body.page-id-XXXX .epg-title--section {
+  font-size: clamp(28px, 3.5vw, 50px);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+body.page-id-XXXX .epg-title--card {
+  font-size: clamp(17px, 1.7vw, 21px);
+  margin-bottom: 0.75rem;
+}
+body.page-id-XXXX .epg-text {
+  font-family: var(--epg-font-body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.6;
+  color: var(--epg-gray);
+}
+body.page-id-XXXX .epg-text--center { text-align: center; }
+body.page-id-XXXX .epg-text--coffee { color: var(--epg-coffee); }
+body.page-id-XXXX .epg-text--italic { font-style: italic; }
+body.page-id-XXXX .epg-text--gold {
+  color: var(--epg-gold);
+  font-size: 14px;
+  font-weight: 600;
+}
+body.page-id-XXXX .epg-text--cream { color: var(--epg-cream-amber); }
+
+/* ── Badge ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-badge {
+  display: inline-block;
+  background: var(--epg-gold);
+  color: var(--epg-white);
+  padding: 4px 12px;
+  border-radius: var(--epg-btn-radius);
+  font-family: var(--epg-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Precio ──────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-price {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--epg-gold);
+  margin-bottom: 2rem;
+}
+body.page-id-XXXX .epg-price__unit {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--epg-gray);
+}
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--epg-gold) !important;
+  color: var(--epg-white) !important;
+  padding: var(--epg-btn-pad) !important;
+  border-radius: var(--epg-btn-radius) !important;
+  font-family: var(--epg-font-body) !important;
+  font-size: var(--epg-btn-size) !important;
+  font-weight: 600 !important;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--epg-transition);
+  min-height: auto !important;
+}
+body.page-id-XXXX .epg-btn:hover {
+  background: var(--epg-gold-hover) !important;
+  box-shadow: var(--epg-card-shadow-hover);
+  transform: translateY(-4px);
+  color: var(--epg-white) !important;
+}
+body.page-id-XXXX .epg-btn svg { stroke: currentColor !important; }
+
+body.page-id-XXXX .epg-btn--ghost {
+  background: transparent !important;
+  color: var(--epg-gold) !important;
+  border: 1.5px solid var(--epg-gold) !important;
+}
+body.page-id-XXXX .epg-btn--ghost:hover {
+  background: var(--epg-gold) !important;
+  color: var(--epg-white) !important;
+}
+
+body.page-id-XXXX .epg-btn--wa {
+  background: transparent !important;
+  color: var(--epg-wa) !important;
+  border: 1.5px solid var(--epg-wa) !important;
+}
+body.page-id-XXXX .epg-btn--wa:hover {
+  background: var(--epg-wa) !important;
+  color: var(--epg-white) !important;
+}
+
+body.page-id-XXXX .epg-btn--wa-ghost {
+  background: transparent !important;
+  color: var(--epg-white) !important;
+  border: 1.5px solid var(--epg-white) !important;
+}
+body.page-id-XXXX .epg-btn--wa-ghost:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: var(--epg-white) !important;
+}
+
+body.page-id-XXXX .epg-btn--wa-solid {
+  background: var(--epg-wa) !important;
+  color: var(--epg-white) !important;
+}
+body.page-id-XXXX .epg-btn--wa-solid:hover {
+  background: #1da854 !important;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+  color: var(--epg-white) !important;
+}
+
+body.page-id-XXXX .epg-btn--full { width: 100%; }
+
+body.page-id-XXXX .epg-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: var(--epg-cta-mt);
+}
+
+/* ── Selector cantidad ───────────────────────────────────────────────── */
+body.page-id-XXXX .epg-quantity { margin-bottom: var(--epg-cta-mt); }
+body.page-id-XXXX .epg-quantity__label {
+  font-family: var(--epg-font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--epg-navy);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+body.page-id-XXXX .epg-quantity__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body.page-id-XXXX .epg-quantity__btn {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--epg-navy) !important;
+  background: transparent !important;
+  color: var(--epg-navy) !important;
+  font-family: var(--epg-font-body);
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--epg-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+  box-shadow: none !important;
+}
+body.page-id-XXXX .epg-quantity__btn:hover {
+  background: var(--epg-navy) !important;
+  color: var(--epg-white) !important;
+}
+body.page-id-XXXX .epg-quantity__value {
+  font-family: var(--epg-font-body);
+  font-weight: 600;
+  font-size: 18px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-card {
+  background: var(--epg-cream-amber);
+  border-radius: var(--epg-card-radius);
+  padding: clamp(32px, 5vw, 48px);
+  box-shadow: var(--epg-card-shadow);
+  transition: var(--epg-transition);
+}
+body.page-id-XXXX .epg-card:hover {
+  box-shadow: var(--epg-card-shadow-hover);
+  transform: translateY(-4px);
+}
+body.page-id-XXXX .epg-card--white { background: var(--epg-white); }
+body.page-id-XXXX .epg-card__image {
+  border-radius: var(--epg-card-radius);
+  overflow: hidden;
+  box-shadow: var(--epg-card-shadow);
+  transition: var(--epg-transition);
+}
+body.page-id-XXXX .epg-card__image:hover {
+  box-shadow: var(--epg-card-shadow-hover);
+  transform: translateY(-4px);
+}
+body.page-id-XXXX .epg-card__icon {
+  color: var(--epg-gold);
+  margin-bottom: 1rem;
+  width: 32px;
+  height: 32px;
+}
+body.page-id-XXXX .epg-card--center { text-align: center; }
+
+/* ── Stats ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+body.page-id-XXXX .epg-stat {
+  background: var(--epg-cream-amber);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+body.page-id-XXXX .epg-stat__value {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--epg-gold);
+  margin-bottom: 4px;
+}
+body.page-id-XXXX .epg-stat__label {
+  font-family: var(--epg-font-body);
+  font-size: 14px;
+  color: var(--epg-coffee);
+}
+
+/* ── Ficha técnica ───────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-specs {
+  max-width: 800px;
+  margin: 0 auto;
+}
+body.page-id-XXXX .epg-spec {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(42,52,62,0.1);
+}
+body.page-id-XXXX .epg-spec__label {
+  font-family: var(--epg-font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--epg-coffee);
+}
+body.page-id-XXXX .epg-spec__value {
+  font-family: var(--epg-font-body);
+  font-size: 15px;
+  color: var(--epg-navy);
+}
+
+/* ── Métodos de preparación (grid 3 cards) ───────────────────────────── */
+body.page-id-XXXX .epg-methods {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Productos relacionados (2 cards centradas) ──────────────────────── */
+body.page-id-XXXX .epg-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+body.page-id-XXXX .epg-products--2 {
+  max-width: 760px;
+  margin: 0 auto;
+}
+body.page-id-XXXX .epg-product {
+  background: var(--epg-cream-amber);
+  border-radius: var(--epg-card-radius);
+  overflow: hidden;
+  box-shadow: var(--epg-card-shadow);
+  transition: var(--epg-transition);
+}
+body.page-id-XXXX .epg-product:hover {
+  box-shadow: var(--epg-card-shadow-hover);
+  transform: translateY(-4px);
+}
+body.page-id-XXXX .epg-product__image { aspect-ratio: 1 / 1; overflow: hidden; }
+body.page-id-XXXX .epg-product__image img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+body.page-id-XXXX .epg-product__content { padding: 1.5rem; }
+body.page-id-XXXX .epg-product__title {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--epg-coffee);
+  margin-bottom: 0.5rem;
+}
+body.page-id-XXXX .epg-product__price {
+  font-family: var(--epg-font-body);
+  font-size: 18px;
+  color: var(--epg-gold);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ── CTA Band (navy) ─────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-section--navy .epg-title { color: var(--epg-white); }
+body.page-id-XXXX .epg-cta {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+body.page-id-XXXX .epg-cta__bg {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.18;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+body.page-id-XXXX .epg-cta__title {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  color: var(--epg-white);
+  margin-bottom: 1rem;
+}
+
+/* ── Caja de contacto ────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-contact {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--epg-white);
+  border-radius: var(--epg-card-radius);
+  padding: clamp(28px, 4vw, 52px);
+  box-shadow: var(--epg-card-shadow);
+  border: 1px solid rgba(249,192,106,.4);
+}
+body.page-id-XXXX .epg-contact__title {
+  font-family: var(--epg-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--epg-coffee);
+  margin-bottom: 1rem;
+}
+
+/* ── Iconos SVG ──────────────────────────────────────────────────────── */
+body.page-id-XXXX .epg-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.page-id-XXXX .epg-icon--lg { width: 24px; height: 24px; }
+body.page-id-XXXX .epg-icon--xl { width: 32px; height: 32px; }
+
+/* ── Utilidades de espaciado ─────────────────────────────────────────── */
+body.page-id-XXXX .epg-mb-1 { margin-bottom: 0.5rem; }
+body.page-id-XXXX .epg-mb-2 { margin-bottom: 1rem; }
+body.page-id-XXXX .epg-mb-3 { margin-bottom: 1.5rem; }
+body.page-id-XXXX .epg-mb-4 { margin-bottom: 2rem; }
+body.page-id-XXXX .epg-mb-cta { margin-bottom: var(--epg-cta-mt); }
+
+/* ── Anular márgenes/padding del wrapper Astra ───────────────────────── */
+body.page-id-XXXX .content-area,
+body.page-id-XXXX #primary { margin: 0 !important; }
+body.page-id-XXXX .ast-article-single {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ── Full-width containers ───────────────────────────────────────────── */
+body.page-id-XXXX .site-content > .ast-container,
+body.page-id-XXXX #primary,
+body.page-id-XXXX .entry-content,
+body.page-id-XXXX .elementor-XXXX,
+body.page-id-XXXX .elementor-section,
+body.page-id-XXXX .elementor-container,
+body.page-id-XXXX .elementor-section.elementor-section-boxed > .elementor-container,
+body.page-id-XXXX .elementor-column,
+body.page-id-XXXX .elementor-widget-wrap,
+body.page-id-XXXX .epg-page {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ── Ocultar título de página y breadcrumb ───────────────────────────── */
+body.page-id-XXXX .entry-title,
+body.page-id-XXXX .ast-breadcrumbs-wrapper,
+body.page-id-XXXX .page-header,
+body.page-id-XXXX .ast-page-header-wrap { display: none !important; }
+
+/* ── Ocultar footer del tema ─────────────────────────────────────────── */
+body.page-id-XXXX .site-footer,
+body.page-id-XXXX #colophon,
+body.page-id-XXXX .ast-footer-widget-area,
+body.page-id-XXXX footer.site-footer { display: none !important; }
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (min-width: 600px) {
+  body.page-id-XXXX .epg-btn-group { flex-direction: row; flex-wrap: wrap; }
+  body.page-id-XXXX .epg-methods { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+  body.page-id-XXXX .epg-grid--2col { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .epg-grid--4col { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  body.page-id-XXXX .epg-grid--4col { grid-template-columns: repeat(4, 1fr); }
+  body.page-id-XXXX .epg-products { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  body.page-id-XXXX .epg-title--hero { font-size: 32px; }
+  body.page-id-XXXX .epg-grid { gap: 2rem; }
+  body.page-id-XXXX .epg-spec {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 1rem 0;
+  }
+  body.page-id-XXXX .epg-order-2-mobile { order: 2 !important; }
+  body.page-id-XXXX .epg-order-1-mobile { order: 1 !important; }
+}
+@media (max-width: 600px) {
+  body.page-id-XXXX .epg-products--2 { grid-template-columns: 1fr; max-width: 360px; }
+  body.page-id-XXXX .epg-stats { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .epg-section--navy .epg-cta__bg { display: none; }
+}
