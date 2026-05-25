@@ -1,0 +1,466 @@
+/* ==========================================================================
+   La Despensa del Almirante — Design System
+   --------------------------------------------------------------------------
+   Tokens compartidos por todas las páginas HTML custom del sitio
+   (landing, /cafe, futuras /conservas, /aceite, /sales).
+
+   USO EN WORDPRESS:
+   Subir este archivo a wp-content/uploads/landing-almirante/shared/
+   y enlazarlo desde "Insert Headers and Footers" → Scripts in Header:
+
+       <link rel="stylesheet"
+             href="/wp-content/uploads/landing-almirante/shared/da-design-system.css">
+
+   Tras hacerlo, las páginas custom solo necesitan usar las clases y
+   variables --da-* sin redefinir colores ni tipografías.
+
+   FUTURO (Elementor Pro):
+   Estas mismas variables se exponen como Global Colors / Global Fonts en
+   Elementor Pro y los widgets las heredan automáticamente —
+   migración sin redefinir nada.
+   ========================================================================== */
+
+:root {
+  /* ---------- Paleta (alineada con landing actual) ---------- */
+  --da-navy:        #2A343E;   /* navy principal, marca */
+  --da-navy-soft:   #374151;   /* navy suave para bordes y CTA secundarios */
+  --da-gold:        #96724D;   /* dorado de marca */
+  --da-gold-soft:   rgba(150, 114, 77, 0.1);
+  --da-gold-veil:   rgba(150, 114, 77, 0.2);
+  --da-cream:       #FDFBF7;   /* fondo cálido principal */
+  --da-white:       #FFFFFF;
+  --da-gray-50:     #f9fafb;
+  --da-gray-100:    #f3f4f6;
+  --da-gray-300:    #d1d5db;
+  --da-gray-400:    #9ca3af;
+  --da-gray-500:    #6b7280;
+  --da-gray-600:    #4b5563;
+  --da-gray-700:    #374151;
+
+  /* Acentos sectoriales — café */
+  --da-coffee-deep: #603809;   /* extraído del Figma Bean Scene (único token) */
+  --da-coffee-warm: #6F4E3C;
+  --da-cream-warm:  #FCEFD9;   /* crema cálida para fondos de cards USP café */
+
+  /* ---------- Tipografía ---------- */
+  --da-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --da-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --da-fs-display-xl: clamp(2.5rem, 5vw, 4.5rem);   /* hero */
+  --da-fs-display-lg: clamp(2rem,   4vw, 3.25rem);  /* sección */
+  --da-fs-display-md: clamp(1.5rem, 3vw, 2.25rem);  /* bloque */
+  --da-fs-eyebrow:    0.875rem;
+  --da-fs-body:       1rem;
+  --da-fs-body-lg:    1.125rem;
+  --da-fs-small:      0.875rem;
+
+  --da-lh-tight:  1.15;
+  --da-lh-snug:   1.35;
+  --da-lh-normal: 1.6;
+
+  /* ---------- Spacing ---------- */
+  --da-space-1:  4px;
+  --da-space-2:  8px;
+  --da-space-3:  12px;
+  --da-space-4:  16px;
+  --da-space-5:  24px;
+  --da-space-6:  32px;
+  --da-space-7:  48px;
+  --da-space-8:  64px;
+  --da-space-9:  96px;
+
+  --da-section-pad-y: clamp(48px, 8vw, 120px);
+  --da-container-max: 1200px;
+  --da-container-narrow: 800px;
+
+  /* ---------- Radios y elevación ---------- */
+  --da-radius-sm:    4px;
+  --da-radius-md:    8px;
+  --da-radius-lg:    12px;
+  --da-radius-xl:    24px;
+  --da-radius-pill:  9999px;
+
+  --da-shadow-sm: 0 1px 2px rgba(42, 52, 62, 0.06);
+  --da-shadow-md: 0 4px 12px rgba(42, 52, 62, 0.08);
+  --da-shadow-lg: 0 12px 32px rgba(42, 52, 62, 0.12);
+
+  /* ---------- Transiciones ---------- */
+  --da-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --da-dur-fast:    150ms;
+  --da-dur-base:    250ms;
+  --da-dur-slow:    400ms;
+
+  /* ---------- CTA spacing (sesión armonización) ---------- */
+  --da-cta-mt:  clamp(24px, 3vw, 40px);  /* separación texto → botón */
+  --da-cta-gap: 12px;                    /* gap entre 2+ botones */
+
+  /* ---------- Floating buttons (uniformes en todo el sitio) ---------- */
+  --da-float-size: 58px;
+  --da-float-right: 28px;
+  --da-float-bottom: 28px;        /* WhatsApp abajo */
+  --da-float-stack: 100px;        /* back-to-top encima */
+}
+
+/* ==========================================================================
+   Reset/base mínimo para bloques HTML personalizados de WordPress
+   (no afecta al resto del tema Astra)
+   ========================================================================== */
+
+[class*="da-block"],
+[class*="da-section"],
+[data-da-block] {
+  box-sizing: border-box;
+  font-family: var(--da-font-body);
+  color: var(--da-navy);
+  line-height: var(--da-lh-normal);
+}
+
+[data-da-block] h1,
+[data-da-block] h2,
+[data-da-block] h3,
+[data-da-block] h4 {
+  font-family: var(--da-font-display);
+  color: var(--da-navy);
+  line-height: var(--da-lh-tight);
+  margin: 0 0 var(--da-space-4);
+}
+
+[data-da-block] p {
+  margin: 0 0 var(--da-space-4);
+}
+
+[data-da-block] a {
+  color: var(--da-gold);
+  text-decoration: none;
+  transition: color var(--da-dur-base) var(--da-ease);
+}
+[data-da-block] a:hover {
+  color: var(--da-navy);
+}
+
+/* ==========================================================================
+   Utilidades reusables
+   ========================================================================== */
+
+.da-container {
+  max-width: var(--da-container-max);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.da-container--narrow {
+  max-width: var(--da-container-narrow);
+}
+
+.da-section {
+  padding-block: var(--da-section-pad-y);
+}
+
+.da-section--cream { background: var(--da-cream); }
+.da-section--white { background: var(--da-white); }
+.da-section--navy  { background: var(--da-navy);  color: var(--da-cream); }
+.da-section--navy h2,
+.da-section--navy h3 { color: var(--da-cream); }
+
+.da-eyebrow {
+  font-family: var(--da-font-body);
+  font-size: var(--da-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--da-gold);
+  margin-bottom: var(--da-space-3);
+}
+
+.da-display-xl { font-family: var(--da-font-display); font-size: var(--da-fs-display-xl); line-height: var(--da-lh-tight); }
+.da-display-lg { font-family: var(--da-font-display); font-size: var(--da-fs-display-lg); line-height: var(--da-lh-tight); }
+.da-display-md { font-family: var(--da-font-display); font-size: var(--da-fs-display-md); line-height: var(--da-lh-snug);  }
+
+.da-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--da-space-2);
+  padding: var(--da-space-4) var(--da-space-6);
+  border-radius: var(--da-radius-pill);
+  font-family: var(--da-font-body);
+  font-weight: 600;
+  font-size: var(--da-fs-body);
+  text-decoration: none;
+  transition: transform var(--da-dur-base) var(--da-ease),
+              background var(--da-dur-base) var(--da-ease),
+              color var(--da-dur-base) var(--da-ease),
+              box-shadow var(--da-dur-base) var(--da-ease);
+  cursor: pointer;
+  border: 0;
+}
+
+.da-cta--primary {
+  background: var(--da-gold);
+  color: var(--da-white);
+}
+.da-cta--primary:hover {
+  background: var(--da-navy);
+  color: var(--da-cream);
+  transform: translateY(-1px);
+  box-shadow: var(--da-shadow-md);
+}
+
+.da-cta--ghost {
+  background: transparent;
+  color: var(--da-navy);
+  border: 1px solid var(--da-navy);
+}
+.da-cta--ghost:hover {
+  background: var(--da-navy);
+  color: var(--da-cream);
+}
+
+/* ==========================================================================
+   Grids comunes
+   ========================================================================== */
+
+.da-grid {
+  display: grid;
+  gap: var(--da-space-6);
+}
+
+.da-grid--cards-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.da-grid--split {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--da-space-8);
+}
+
+@media (max-width: 768px) {
+  .da-grid--split { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Card de producto (reusable, también será el patrón del Loop Grid de
+   Elementor Pro en la migración futura)
+   ========================================================================== */
+
+.da-product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--da-white);
+  border-radius: var(--da-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--da-shadow-sm);
+  transition: transform var(--da-dur-base) var(--da-ease),
+              box-shadow var(--da-dur-base) var(--da-ease);
+}
+.da-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--da-shadow-lg);
+}
+
+.da-product-card__image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+  background: var(--da-gold-soft);
+}
+
+.da-product-card__body {
+  padding: var(--da-space-5) var(--da-space-5) var(--da-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--da-space-3);
+  flex: 1;
+}
+
+.da-product-card__title {
+  font-family: var(--da-font-display);
+  font-size: 1.5rem;
+  color: var(--da-navy);
+  margin: 0;
+}
+
+.da-product-card__meta {
+  font-size: var(--da-fs-small);
+  color: var(--da-gray-500);
+  margin: 0;
+}
+
+.da-product-card__footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--da-space-3);
+}
+
+/* ==========================================================================
+   Botón flotante WhatsApp (reutilizable en cualquier página custom)
+   Teléfono solo en href — NO aparece como texto visible en la UI
+   ========================================================================== */
+
+.da-float-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: var(--da-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--da-white);
+  box-shadow: var(--da-shadow-md);
+  z-index: 1000;
+  transition: background var(--da-dur-base) var(--da-ease),
+              transform var(--da-dur-base) var(--da-ease);
+  text-decoration: none;
+}
+.da-float-wa:hover {
+  background: #1da854;
+  transform: scale(1.08);
+}
+.da-float-wa svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   Botón flotante "volver arriba" (back-to-top)
+   Apilado ENCIMA del WhatsApp en la esquina inferior derecha.
+   Toggle de visibilidad: añadir/quitar la clase .visible vía JS al hacer scroll.
+   ========================================================================== */
+
+.da-float-backtop,
+.cp-float-backtop {
+  position: fixed !important;
+  bottom: var(--da-float-stack) !important;   /* encima del WA */
+  right: var(--da-float-right) !important;
+  width: var(--da-float-size) !important;
+  height: var(--da-float-size) !important;
+  min-width: var(--da-float-size) !important;
+  min-height: var(--da-float-size) !important;
+  padding: 0 !important;
+  background: var(--da-gold) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(96, 56, 9, .30) !important;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity var(--da-dur-base) var(--da-ease),
+              transform var(--da-dur-base) var(--da-ease),
+              background var(--da-dur-fast) var(--da-ease);
+  box-sizing: border-box;
+  line-height: 1 !important;
+}
+.da-float-backtop.visible,
+.cp-float-backtop.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.da-float-backtop:hover,
+.cp-float-backtop:hover { background: #7a5a3a !important; }
+.da-float-backtop svg,
+.cp-float-backtop svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--da-white);
+}
+
+/* ==========================================================================
+   Separación uniforme texto → botón (token --da-cta-mt)
+   Resuelve el problema de botones pegados al texto en cualquier página
+   con reset agresivo (Astra, Elementor, custom CSS).
+   ==========================================================================
+   Cubre dos casos:
+     1. Botón es hermano directo de un elemento textual → recibe margin-top
+     2. Botón vive dentro de un contenedor (footer, actions group) →
+        el contenedor recibe margin-top, no el botón
+
+   Si añades una clase nueva de botón (.btn-X o .miSitio__cta), incluye
+   esa clase en los selectores siguientes para que herede la separación.
+   ========================================================================== */
+
+:where(p, h1, h2, h3, h4, .da-eyebrow, .cp-hero__eyebrow, .cp-usp__cta-text) + .da-cta,
+:where(p, h1, h2, h3, h4, .da-eyebrow, .cp-hero__eyebrow, .cp-usp__cta-text) + .da-cta--primary,
+:where(p, h1, h2, h3, h4, .da-eyebrow, .cp-hero__eyebrow, .cp-usp__cta-text) + .da-cta--ghost,
+:where(p, h1, h2, h3, h4) + .cp-btn,
+:where(p, h1, h2, h3, h4) + .cp-btn--ghost,
+:where(p, h1, h2, h3, h4) + .cp-contact__btn-email,
+:where(p, h1, h2, h3, h4) + .cp-contact__btn-wa,
+:where(p, h1, h2, h3, h4) + .btn-pill-solid,
+:where(p, h1, h2, h3, h4) + .btn-pill-outline,
+:where(p, h1, h2, h3, h4) + .btn-more,
+:where(p, h1, h2, h3, h4) + .home-cafe-banner__btn,
+:where(p, h1, h2, h3, h4) + .product-footer,
+:where(p, h1, h2, h3, h4) + .cta-group {
+  margin-top: var(--da-cta-mt) !important;
+}
+
+/* Contenedores de acciones (un grupo de 1+ botones) */
+.cp-hero__content .cp-btn,
+.cp-story__text .cp-btn,
+.cp-usp__cta-wrap .cp-btn,
+.cp-cta-band__actions,
+.cp-contact__actions,
+.home-cafe-banner__btn,
+.da-actions {
+  margin-top: var(--da-cta-mt) !important;
+}
+
+/* Gap entre botones cuando coexisten varios */
+.cp-cta-band__actions,
+.cp-contact__actions,
+.da-actions {
+  gap: var(--da-cta-gap);
+}
+
+/* ==========================================================================
+   Override Elementor Kit
+   --------------------------------------------------------------------------
+   El kit de Elementor inyecta reglas globales sobre <button> que pisan
+   colores definidos a nivel de página. Si tu botón se ve invisible
+   (texto del mismo color que el fondo), añade !important en:
+     - background
+     - color
+     - fill / stroke del SVG interior
+   Patrón aplicado en .btn-submit de la home. Replicarlo en cualquier
+   botón nuevo que conviva con Elementor.
+   ========================================================================== */
+
+/* ==========================================================================
+   Breakpoints estándar
+   --------------------------------------------------------------------------
+     ≤ 960px  → tablet: grids 2 col → 1 col, decoraciones desktop ocultas
+     ≤ 600px  → mobile: stacks completos, fuentes hero reducidas,
+                botones de contacto en columna 100% width
+   ========================================================================== */
+
+/* ==========================================================================
+   Overrides globales del tema Astra
+   --------------------------------------------------------------------------
+   1) OCULTAR EL TÍTULO TEXTUAL DEL SITIO
+      WordPress tiene el "Site Title" configurado ("La Despensa del Almirante")
+      para SEO, título de pestaña, Organization schema y Search Console.
+      Pero usamos LOGO como branding visual — no queremos ver el texto al
+      lado del logo en el header. Astra renderiza .site-title por defecto;
+      lo ocultamos. NO QUITAR esta regla aunque parezca "huérfana".
+
+   2) OCULTAR BREADCRUMB / PÁGINA-HEADER por defecto en páginas custom
+      (cada página categórica puede sobreescribir si lo necesita).
+   ========================================================================== */
+
+.site-title,
+.ast-site-title-wrap,
+.site-description {
+  display: none !important;
+}

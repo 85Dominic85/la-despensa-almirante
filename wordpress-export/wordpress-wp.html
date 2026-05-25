@@ -1,0 +1,1305 @@
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap");. -->
+
+  <!--
+  ══════════════════════════════════════════════════════════
+  RUTAS DE IMÁGENES — AJUSTAR TRAS SUBIR A WORDPRESS
+  ══════════════════════════════════════════════════════════
+  Prefijo usado: /wp-content/uploads/landing-almirante/
+  Sube los archivos de assets/ a Media Library en una
+  subcarpeta "landing-almirante" o cambia el prefijo
+  con Buscar+Reemplazar (Ctrl+H) en cualquier editor.
+  ══════════════════════════════════════════════════════════
+  -->
+
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:  #2A343E;
+      --gold:  #96724D;
+      --cream: #FDFBF7;
+      --white: #FFFFFF;
+      --gray-50:  #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAVEGACIÓN ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .nav-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { height: 5rem; width: auto; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--navy);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid var(--gray-200);
+      background: rgba(255,255,255,0.98);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--navy);
+      border-bottom: 1px solid var(--gray-100);
+      transition: color 0.15s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      background: linear-gradient(to bottom, var(--gray-50), var(--white));
+      position: relative;
+    }
+    .hero-waves {
+      position: absolute;
+      top: 5rem; right: 2.5rem;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Badge tipo chip dorado */
+    .chip-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(150,114,77,0.1);
+      color: var(--gold);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 span {
+      display: block;
+      color: var(--gold);
+      margin-top: 0.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    .cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    .btn-pill-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(42,52,62,0.25);
+    }
+    .btn-pill-solid:hover { background: var(--gold); transform: translateY(-1px); }
+
+    .btn-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--navy);
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 2px solid var(--navy);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-pill-outline:hover { background: var(--navy); color: var(--white); }
+
+    .hero-img-wrap { position: relative; }
+    .hero-img-box {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(42,52,62,0.2);
+      background: var(--gray-100);
+      aspect-ratio: 3/4;
+    }
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    /* Award overlay en la imagen */
+    .award-overlay {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(42,52,62,0.15);
+      border: 1px solid var(--gray-100);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .award-icon-wrap {
+      color: var(--gold);
+    }
+    .award-overlay p:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.875rem;
+      color: var(--navy);
+    }
+    .award-overlay p:last-child {
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--gold);
+    }
+
+    /* ── SECCIONES COMUNES ── */
+    section { padding: 6rem 1.5rem; }
+    .container { max-width: 80rem; margin: 0 auto; }
+    .container-md { max-width: 64rem; margin: 0 auto; }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(150,114,77,0.1);
+      color: var(--gold);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .section-lead {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+
+    /* ── PRODUCTOS ── */
+    #productos { background: var(--gray-50); }
+
+    .products-header { text-align: center; margin-bottom: 4rem; }
+    .products-header .section-lead { max-width: 42rem; margin: 0 auto; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(42,52,62,0.08);
+      border: 1px solid var(--gray-100);
+      transition: box-shadow 0.5s, transform 0.5s;
+    }
+    .product-card:hover {
+      box-shadow: 0 20px 50px rgba(42,52,62,0.15);
+      transform: translateY(-0.5rem);
+    }
+
+    .product-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--gray-100);
+    }
+    .product-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .product-card:hover .product-img { transform: scale(1.1); }
+
+    /* Badge: top-right en las cards */
+    .card-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .badge-gold  { background: var(--gold); color: var(--white); }
+    .badge-navy  { background: var(--navy); color: var(--white); }
+    .badge-light { background: var(--white); color: var(--navy); border: 1px solid var(--gray-300); }
+
+    .product-body { padding: 2rem; }
+    .product-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .product-body p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.625;
+      margin-bottom: 1rem;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .product-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+    .product-tag svg { color: var(--gold); }
+
+    .btn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: text-decoration 0.15s;
+    }
+    .btn-more:hover { text-decoration: underline; }
+
+    /* ── EQUIPO ── */
+    #equipo { background: var(--white); }
+
+    .team-header { text-align: center; margin-bottom: 4rem; }
+    .team-header .section-lead { max-width: 42rem; margin: 0 auto; }
+
+    .team-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+    .team-photo-wrap {
+      position: relative;
+    }
+    .team-photo-box {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(42,52,62,0.2);
+      background: var(--gray-100);
+      aspect-ratio: 3/4;
+    }
+    .team-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .team-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(42,52,62,0.6), transparent, transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .team-photo-wrap:hover .team-photo-overlay { opacity: 1; }
+
+    .team-box {
+      max-width: 64rem;
+      margin: 4rem auto 0;
+      background: var(--gray-50);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      border: 1px solid var(--gray-100);
+    }
+    .team-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .team-body-text {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.875rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    /* ── ORIGEN ── */
+    #origen {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .origen-anchor-bg {
+      position: absolute;
+      bottom: -10rem; right: -10rem;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .origen-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip-gold-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(150,114,77,0.2);
+      color: var(--gold);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #origen .section-h2 { color: var(--white); }
+    #origen .section-h2 span { display: block; color: var(--gold); margin-top: 0.5rem; }
+
+    .origen-lead {
+      font-size: 1.125rem;
+      color: var(--gray-300);
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+    }
+
+    .origen-points { display: flex; flex-direction: column; gap: 1rem; }
+    .origen-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .origen-icon {
+      flex-shrink: 0;
+      background: rgba(150,114,77,0.2);
+      padding: 0.75rem;
+      border-radius: 9999px;
+      color: var(--gold);
+      display: flex;
+    }
+    .origen-point h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .origen-point p { font-size: 0.875rem; color: var(--gray-400); }
+
+    .origen-img-wrap { position: relative; }
+    .origen-img-box {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+      background: #374151;
+      aspect-ratio: 3/4;
+    }
+    .origen-img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Badge posición: bottom-LEFT (igual que en el original) */
+    .years-badge {
+      position: absolute;
+      bottom: -2rem; left: -2rem;
+      background: var(--gold);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      max-width: 16rem;
+    }
+    .years-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.875rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .years-badge-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ── CONTACTO ── */
+    #contacto { background: var(--gray-50); }
+
+    .contact-header { text-align: center; margin-bottom: 3rem; }
+    .contact-header .section-lead { max-width: 42rem; margin: 0 auto; }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px rgba(42,52,62,0.1);
+      padding: 3rem;
+      border: 1px solid var(--gray-100);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group + .form-group-full { margin-top: 0; }
+    .form-group-full { margin-bottom: 1.5rem; }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--gray-300);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--navy);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(150,114,77,0.2);
+    }
+    .form-input::placeholder { color: var(--gray-400); }
+    textarea.form-input { resize: none; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 9999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(42,52,62,0.2);
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--gold); }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 1.5rem;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .contact-card {
+      text-align: center;
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(42,52,62,0.08);
+      border: 1px solid var(--gray-100);
+    }
+    .contact-card-icon {
+      background: rgba(150,114,77,0.1);
+      width: 3.5rem; height: 3.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--gold);
+    }
+    .contact-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .contact-card a,
+    .contact-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    .contact-card a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .footer-logo {
+      height: 6rem; width: auto;
+      margin: 0 auto 1.5rem;
+    }
+    .footer-desc {
+      font-size: 0.875rem;
+      color: var(--gray-400);
+      margin-bottom: 1.5rem;
+    }
+    .footer-divider {
+      border-top: 1px solid #374151;
+      padding-top: 1.5rem;
+    }
+    .footer-copy { font-size: 0.75rem; color: var(--gray-500); }
+
+    /* ── FLOTANTES ── */
+    .float-wa {
+      position: fixed;
+      bottom: 2rem; left: 2rem;
+      z-index: 50;
+      background: #25D366;
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 9999px;
+      box-shadow: 0 20px 50px rgba(37,211,102,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-wa 2s infinite;
+      transition: background 0.2s;
+    }
+    .float-wa:hover { background: #1da854; animation: none; }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 20px 50px rgba(37,211,102,0.35); }
+      50%  { box-shadow: 0 20px 50px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.07); }
+    }
+
+    .float-backtop {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 50;
+      background: var(--gold);
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 20px 50px rgba(150,114,77,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s, opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.8);
+    }
+    .float-backtop.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+    .float-backtop:hover { background: var(--navy); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-img-wrap { order: -1; }
+      .award-overlay { bottom: -1rem; right: -0.5rem; padding: 1rem; }
+
+      section { padding: 4rem 1.25rem; }
+
+      .products-grid { grid-template-columns: 1fr; }
+
+      .team-photos { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .team-box { padding: 1.5rem; }
+
+      .origen-inner { grid-template-columns: 1fr; }
+      .years-badge { bottom: 0; left: 0; padding: 1.25rem; }
+
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 1.5rem; }
+      .contact-cards { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <img src="/wp-content/uploads/landing-almirante/logo.png"
+           alt="La Despensa del Almirante"
+           class="nav-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span style="display:none;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#2A343E;">La Despensa del Almirante</span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#equipo">Nuestro Equipo</a></li>
+      <li><a href="#origen">Nuestro Origen</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#productos" onclick="closeMob()">Productos</a>
+    <a href="#equipo"    onclick="closeMob()">Nuestro Equipo</a>
+    <a href="#origen"    onclick="closeMob()">Nuestro Origen</a>
+    <a href="#contacto"  onclick="closeMob()">Contacto</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <!-- Waves decorativo de fondo -->
+  <div class="hero-waves" aria-hidden="true">
+    <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#2A343E" stroke-width="0.5">
+      <path d="M2 12s3-5 7-5 7 10 10 10 7-5 7-5"/>
+      <path d="M2 17s3-5 7-5 7 10 10 10 7-5 7-5"/>
+      <path d="M2 7s3-5 7-5 7 10 10 10 7-5 7-5"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="chip-gold">
+        <!-- Anchor -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="5" r="3"/>
+          <line x1="12" y1="22" x2="12" y2="8"/>
+          <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+        </svg>
+        Desde la Bahía de Cádiz
+      </div>
+
+      <h1 class="hero-h1">
+        Donde la Tradición y la Calidad
+        <span>Navegan Juntas</span>
+      </h1>
+
+      <p class="hero-desc">
+        Productos gourmet artesanales de Cádiz, seleccionados para tiendas que valoran la excelencia y la autenticidad mediterránea.
+      </p>
+
+      <div class="cta-group">
+        <a href="#contacto" class="btn-pill-solid">
+          Solicitar Catálogo
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#productos" class="btn-pill-outline">Ver Productos</a>
+      </div>
+    </div>
+
+    <div class="hero-img-wrap">
+      <div class="hero-img-box">
+        <img src="/wp-content/uploads/landing-almirante/aceite.png"
+             alt="Aceite de Oliva Premium La Despensa del Almirante"
+             class="hero-img"
+             onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(150,114,77,0.2),rgba(42,52,62,0.2));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:2rem;\'>Aceite de Oliva Premium<br><small>(aceite.png)</small></p></div>'">
+      </div>
+      <!-- Badge Premiado — overlay sobre la imagen -->
+      <div class="award-overlay">
+        <div class="award-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="7"/>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+          </svg>
+        </div>
+        <div>
+          <p>Premiado en</p>
+          <p>Córdoba 2024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRODUCTOS ESTRELLA
+══════════════════════════════════════ -->
+<section id="productos">
+  <div class="container">
+    <div class="products-header">
+      <div class="section-chip">
+        <!-- Ship icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 21c.6.5 1.2 1 2.5 1C7 22 7 20 9.5 20c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+          <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.2.7 4.3 1.62 6"/>
+          <path d="M12 10l2-4.5a2 2 0 0 0-4 0L12 10"/>
+          <line x1="12" y1="10" x2="12" y2="14"/>
+        </svg>
+        Selección Premium
+      </div>
+      <h2 class="section-h2">Nuestros Productos Estrella</h2>
+      <p class="section-lead">Cada producto cuenta la historia de Cádiz, desde nuestras salinas hasta nuestros olivares</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- ACEITE -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/wp-content/uploads/landing-almirante/aceite.png"
+               alt="Aceite de Oliva Virgen Extra Picual"
+               class="product-img"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(150,114,77,0.2),rgba(42,52,62,0.1));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:1rem;font-size:0.875rem;\'>Aceite de Oliva<br>Virgen Extra<br><small>(aceite.png)</small></p></div>'">
+          <span class="card-badge badge-gold">PREMIADO</span>
+        </div>
+        <div class="product-body">
+          <h3>Aceite de Oliva Virgen Extra Picual</h3>
+          <p>Producción ecológica de variedad Picual. Premiado en el 3er Concurso Ibérico de Córdoba. Notas frutadas con un toque amargo equilibrado.</p>
+          <div class="product-footer">
+            <div class="product-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              Ecológico
+            </div>
+            <button class="btn-more">
+              Más info
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CABALLAS -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/wp-content/uploads/landing-almirante/caballas.png"
+               alt="Caballas al Pedro Ximénez"
+               class="product-img"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(42,52,62,0.1));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:1rem;font-size:0.875rem;\'>Caballas al<br>Pedro Ximénez<br><small>(caballas.png)</small></p></div>'">
+          <span class="card-badge badge-navy">EXCLUSIVO</span>
+        </div>
+        <div class="product-body">
+          <h3>Caballas al Pedro Ximénez</h3>
+          <p>Fusión única entre el mar gaditano y el vino dulce de Jerez. Tradición artesanal andaluza en cada bocado.</p>
+          <div class="product-footer">
+            <div class="product-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-5 7-5 7 10 10 10 7-5 7-5"/></svg>
+              Artesanal
+            </div>
+            <button class="btn-more">
+              Más info
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SAL -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/wp-content/uploads/landing-almirante/sal.png"
+               alt="Escamas de Sal Marina de la Bahía de Cádiz"
+               class="product-img"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(249,250,251,1),rgba(150,114,77,0.1));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:1rem;font-size:0.875rem;\'>Escamas de<br>Sal Marina<br><small>(sal.png)</small></p></div>'">
+          <span class="card-badge badge-light">EDICIÓN ESPECIAL</span>
+        </div>
+        <div class="product-body">
+          <h3>Escamas de Sal Marina</h3>
+          <p>De las salinas de la Bahía de Cádiz. Recolección manual y secado natural al sol. El toque final perfecto para cualquier plato gourmet.</p>
+          <div class="product-footer">
+            <div class="product-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              100% Natural
+            </div>
+            <button class="btn-more">
+              Más info
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     NUESTRO EQUIPO
+══════════════════════════════════════ -->
+<section id="equipo">
+  <div class="container">
+
+    <div class="team-header">
+      <div class="section-chip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Equipo Fundador
+      </div>
+      <h2 class="section-h2">La Pasión Detrás de Cada Producto</h2>
+      <p class="section-lead">Nuestro equipo combina tradición familiar, experiencia internacional y un profundo amor por la gastronomía andaluza</p>
+    </div>
+
+    <!-- 2 fotos verticales en grid -->
+    <div class="team-photos">
+      <div class="team-photo-wrap">
+        <div class="team-photo-box">
+          <img src="/wp-content/uploads/landing-almirante/equipo-presentacion.jpeg"
+               alt="Equipo La Despensa del Almirante — Presentación Oficial"
+               class="team-photo"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(42,52,62,0.1),rgba(150,114,77,0.05));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:1rem;\'>Foto Presentación<br><small>(equipo-presentacion.jpeg)</small></p></div>'">
+          <div class="team-photo-overlay"></div>
+        </div>
+      </div>
+      <div class="team-photo-wrap">
+        <div class="team-photo-box">
+          <img src="/wp-content/uploads/landing-almirante/equipo-cata.jpeg"
+               alt="Equipo La Despensa del Almirante — Cata de Productos"
+               class="team-photo"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(150,114,77,0.1),rgba(42,52,62,0.05));display:flex;align-items:center;justify-content:center;\'><p style=\'color:#9ca3af;text-align:center;padding:1rem;\'>Foto Cata Gourmet<br><small>(equipo-cata.jpeg)</small></p></div>'">
+          <div class="team-photo-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caja de texto DEBAJO de las fotos (full-width) -->
+    <div class="team-box">
+      <p class="team-body-text">
+        <span class="team-quote">"Nuestra misión es llevar la esencia de Cádiz al mundo"</span>
+        Somos un equipo de apasionados por la gastronomía andaluza, comprometidos con la excelencia y la preservación de las tradiciones culinarias de nuestra tierra. Cada producto que seleccionamos refleja nuestro respeto por los métodos artesanales y nuestro compromiso con la calidad superior.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <p class="stat-label">Años de Experiencia</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <p class="stat-label">Productos Artesanales</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">12</div>
+          <p class="stat-label">Países Distribuidores</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     NUESTRO ORIGEN
+══════════════════════════════════════ -->
+<section id="origen">
+  <!-- Anchor decorativo de fondo -->
+  <div class="origen-anchor-bg" aria-hidden="true">
+    <svg width="600" height="600" viewBox="0 0 24 24" fill="none" stroke="#96724D" stroke-width="0.5">
+      <circle cx="12" cy="5" r="3"/>
+      <line x1="12" y1="22" x2="12" y2="8"/>
+      <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="origen-inner">
+
+      <div>
+        <div class="chip-gold-dark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Cádiz, España
+        </div>
+
+        <h2 class="section-h2">
+          Del Corazón de Andalucía
+          <span>Al Mundo</span>
+        </h2>
+
+        <p class="origen-lead">
+          La Despensa del Almirante nace del profundo respeto por la tierra y el mar gaditanos. Cada producto es una carta de amor a nuestra tierra, seleccionado meticulosamente para llevar la esencia de Cádiz a tiendas gourmet de todo el mundo.
+        </p>
+
+        <div class="origen-points">
+
+          <div class="origen-point">
+            <div class="origen-icon">
+              <!-- Ship -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 21c.6.5 1.2 1 2.5 1C7 22 7 20 9.5 20c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.2.7 4.3 1.62 6"/>
+                <path d="M12 10l2-4.5a2 2 0 0 0-4 0L12 10"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Tradición Marinera</h4>
+              <p>Más de 3000 años de historia pesquera en nuestras costas</p>
+            </div>
+          </div>
+
+          <div class="origen-point">
+            <div class="origen-icon">
+              <!-- Award -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Calidad Certificada</h4>
+              <p>Productos premiados y reconocidos internacionalmente</p>
+            </div>
+          </div>
+
+          <div class="origen-point">
+            <div class="origen-icon">
+              <!-- Sun -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Sostenibilidad</h4>
+              <p>Compromiso con producción ecológica y métodos tradicionales</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="origen-img-wrap">
+        <div class="origen-img-box">
+          <img src="/wp-content/uploads/landing-almirante/cadiz.jpg"
+               alt="Bahía de Cádiz — Origen de nuestros productos"
+               class="origen-img"
+               onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;\'><p style=\'color:#6b7280;text-align:center;padding:1rem;\'>Imagen Bahía de Cádiz<br><small>(cadiz.jpg)</small></p></div>'">
+        </div>
+        <!-- Badge: bottom-LEFT igual que en el original -->
+        <div class="years-badge">
+          <p class="years-badge-num">3000+</p>
+          <p class="years-badge-text">Años de tradición mediterránea en cada producto</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACTO
+══════════════════════════════════════ -->
+<section id="contacto">
+  <div class="container-md">
+
+    <div class="contact-header">
+      <h2 class="section-h2">Llevemos Cádiz a Tu Tienda</h2>
+      <p class="section-lead">Contáctanos para recibir nuestro catálogo completo y condiciones para distribuidores</p>
+    </div>
+
+    <div class="contact-form-card">
+      <form id="da-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f-nombre">Nombre y Apellidos *</label>
+            <input class="form-input" id="f-nombre" type="text" name="nombre" placeholder="Juan García" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-email">Email Corporativo *</label>
+            <input class="form-input" id="f-email" type="email" name="email" placeholder="juan@mitienda.com" required>
+          </div>
+        </div>
+
+        <div class="form-group-full">
+          <label class="form-label" for="f-empresa">Nombre de la Tienda / Empresa *</label>
+          <input class="form-input" id="f-empresa" type="text" name="empresa" placeholder="Delicatessen Gourmet SL" required>
+        </div>
+
+        <div class="form-group-full">
+          <label class="form-label" for="f-mensaje">Mensaje</label>
+          <textarea class="form-input" id="f-mensaje" name="mensaje" rows="5"
+                    placeholder="Cuéntanos sobre tu tienda y qué productos te interesan..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span>Solicitar Información</span>
+        </button>
+
+        <p class="form-note">* Campos obligatorios. Respondemos en menos de 24 horas.</p>
+      </form>
+    </div>
+
+    <!-- Tarjetas de contacto -->
+    <div class="contact-cards">
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 5.45 5.45l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.93v2z"/>
+          </svg>
+        </div>
+        <h4>WhatsApp</h4>
+        <a href="https://wa.me/34610637068?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante"
+           target="_blank" rel="noopener noreferrer">
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h4>Email</h4>
+        <a href="mailto:contacto@ladespensadelalmirante.com">
+          contacto@ladespensadelalmirante.com
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h4>Ubicación</h4>
+        <p>Bahía de Cádiz, España</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <img src="/wp-content/uploads/landing-almirante/logo-dorado.png"
+       alt="La Despensa del Almirante"
+       class="footer-logo"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <p style="display:none;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#96724D;margin-bottom:1.5rem;">La Despensa del Almirante</p>
+
+  <p class="footer-desc">Productos gourmet artesanales de Cádiz para tiendas especializadas</p>
+
+  <div class="footer-divider">
+    <p class="footer-copy">
+      &copy; <span id="copy-year"></span> La Despensa del Almirante. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     WHATSAPP FLOTANTE (izquierda)
+══════════════════════════════════════ -->
+<a href="https://wa.me/34610637068?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20productos%20de%20La%20Despensa%20del%20Almirante"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="float-wa"
+   aria-label="Contactar por WhatsApp">
+  <!-- MessageCircle filled — igual que en el original -->
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="0" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+</a>
+
+<!-- ══════════════════════════════════════
+     BACK TO TOP (derecha)
+══════════════════════════════════════ -->
+<button class="float-backtop" id="backtop-btn" aria-label="Volver arriba">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+</button>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+  // Año copyright
+  document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+  // Back to Top
+  var backBtn = document.getElementById('backtop-btn');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+  backBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile menu
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  function closeMob() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+
+  // Formulario — feedback visual
+  // (Para producción: reemplazar con WPForms o Contact Form 7)
+  document.getElementById('da-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var span = btn.querySelector('span');
+    var original = span.textContent;
+    span.textContent = '¡Mensaje enviado! Te contactamos pronto.';
+    btn.style.background = '#96724D';
+    btn.disabled = true;
+    setTimeout(function() {
+      span.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  });
+</script>

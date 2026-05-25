@@ -1,0 +1,18 @@
+# Claude Code local settings (rutas y permisos específicos de la máquina)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Repo fuente del proyecto anterior (tiene su propio .git)
+repo-src/
+
+# Node (por si se añade tooling futuro)
+node_modules/
