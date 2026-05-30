@@ -10,6 +10,20 @@
        · aove-herrerillo-aceitunas.jpg — aceitunas en el árbol / cosecha
        · cta-aceite-bg.jpg             — imagen de fondo decorativa CTA band
      ⚠️  Actualizar precio en la sección HERO antes de publicar
+
+     DESPLIEGUE — pasos manuales en WordPress:
+       1. Crear página con slug /aceite y plantilla Elementor Canvas
+       2. Anotar el post-id → reemplazar XXXX en page-styles.css
+       3. Elementor: sección full-width → widget HTML → pegar page-body.html
+       4. wp-admin → Personalizar → CSS adicional → pegar page-styles.css
+       5. Subir las imágenes del aceite a /wp-content/uploads/2026/05/
+       6. Actualizar los src de imagen en el HTML (reemplazar placeholders)
+       7. Actualizar el precio en el HERO
+       8. En la home (Elementor), buscar la card "Aceite de Oliva Virgen Extra"
+          → cambiar el <button class="btn-more"> por:
+          <a href="/aceite/" class="btn-more">Más info →</a>
+       9. Publicar /aceite y guardar la home
+      10. Verificar en desktop y móvil
      ═══════════════════════════════════════════════════════════════════ -->
 
 <div class="ao-page">
