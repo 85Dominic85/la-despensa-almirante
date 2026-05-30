@@ -1,0 +1,524 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     LA DESPENSA DEL ALMIRANTE — HTML página /aceite
+     PEGAR EN: Widget HTML de Elementor en la página AOVE (ID XXXX)
+     ⚠️  Los estilos van en wp-admin → Personalizar → CSS adicional (page-styles.css)
+     ⚠️  Sustituir XXXX por el post-id real antes de pegar el CSS
+
+     IMÁGENES — subir a /wp-content/uploads/2026/05/ antes del despliegue:
+       · aove-herrerillo-botella.png   — foto del producto (botella o lata)
+       · aove-herrerillo-olivar.jpg    — paisaje del olivar El Herrerillo
+       · aove-herrerillo-aceitunas.jpg — aceitunas en el árbol / cosecha
+       · cta-aceite-bg.jpg             — imagen de fondo decorativa CTA band
+     ⚠️  Actualizar precio en la sección HERO antes de publicar
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="ao-page">
+
+<!-- ── 0. HERO / PRODUCTO ───────────────────────────────────────────── -->
+<section class="ao-section" data-da-block="hero">
+  <div class="ao-container">
+    <div class="ao-grid ao-grid--2col">
+
+      <!-- Imagen packaging -->
+      <div>
+        <div class="ao-card">
+          <img src="/wp-content/uploads/2026/05/aove-herrerillo-botella.png"
+               alt="AOVE Ecológico La Despensa del Almirante - El Herrerillo, Medina Sidonia"
+               loading="eager">
+        </div>
+      </div>
+
+      <!-- Info producto -->
+      <div>
+        <span class="ao-badge">OLIVAR EL HERRERILLO · MEDINA SIDONIA · ECOLÓGICO CAAE</span>
+        <h1 class="ao-title ao-title--hero">AOVE Ecológico</h1>
+        <p class="ao-text ao-mb-1">Picual · El Herrerillo · Medina Sidonia, Cádiz</p>
+        <p class="ao-text--gold ao-mb-3">Aceite de oliva virgen extra ecológico · Certificado CAAE · Cosecha temprana</p>
+
+        <!-- ⚠️ Actualizar precio y formato antes de publicar -->
+        <div class="ao-price">00,00 € <span class="ao-price__unit">/ 500 ml</span></div>
+
+        <div class="ao-quantity">
+          <label class="ao-quantity__label">Cantidad</label>
+          <div class="ao-quantity__controls">
+            <button class="ao-quantity__btn" aria-label="Disminuir cantidad"
+              onclick="(function(b){var v=b.parentElement.querySelector('.ao-quantity__value');var n=Math.max(1,parseInt(v.textContent,10)-1);v.textContent=n;})(this)">−</button>
+            <span class="ao-quantity__value">1</span>
+            <button class="ao-quantity__btn" aria-label="Aumentar cantidad"
+              onclick="(function(b){var v=b.parentElement.querySelector('.ao-quantity__value');var n=parseInt(v.textContent,10)+1;v.textContent=n;})(this)">+</button>
+          </div>
+        </div>
+
+        <div class="ao-btn-group">
+          <a href="#" class="ao-btn">
+            <svg class="ao-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            Añadir al carrito
+          </a>
+          <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20hacer%20un%20pedido%20del%20AOVE%20Ecol%C3%B3gico%20de%20La%20Despensa%20del%20Almirante."
+             target="_blank" rel="noopener" class="ao-btn ao-btn--wa">
+            WhatsApp pedido especial
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 1. HISTORIA DEL OLIVAR ─────────────────────────────────────────── -->
+<section class="ao-section ao-section--white" data-da-block="historia">
+  <div class="ao-container">
+    <div class="ao-grid ao-grid--2col">
+
+      <div>
+        <div class="ao-card__image">
+          <img src="/wp-content/uploads/2026/05/aove-herrerillo-olivar.jpg"
+               alt="Olivar El Herrerillo - Medina Sidonia, Cádiz"
+               loading="lazy">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="ao-title ao-title--section" style="text-align:left;">
+          Un olivar integrado al bosque mediterráneo
+        </h2>
+        <p class="ao-text ao-mb-2">
+          El AOVE ecológico de La Despensa del Almirante procede del olivar
+          <strong>El Herrerillo</strong>, en Medina Sidonia (Cádiz). Un entorno
+          privilegiado rodeado de naturaleza mediterránea que conserva lentiscos,
+          coscojas, higueras, almendros, olivos centenarios y acebuches —
+          el olivo silvestre del que hace más de 7.000 años ya se extraía aceite.
+        </p>
+        <p class="ao-text ao-mb-2">
+          A lo largo de los años se han incorporado algarrobos, alcornoques,
+          encinas, quejigos y madroños, además de lavanda, romero, tomillo,
+          mirto y mejorana. Esta biodiversidad favorece cárabos, lechuzas,
+          abubillas, perdices, tortugas e insectos auxiliares que protegen el
+          olivar de plagas de forma natural.
+        </p>
+        <p class="ao-text ao-text--coffee ao-text--italic ao-mb-cta">
+          Un olivar que lleva siglos en equilibrio con su entorno:
+          no lo cultivamos, lo acompañamos.
+        </p>
+        <a href="https://www.olivarelherrerillo.com/" target="_blank" rel="noopener"
+           class="ao-btn ao-btn--external">
+          Ver web del olivar
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. FILOSOFÍA ECOLÓGICA ─────────────────────────────────────────── -->
+<section class="ao-section" data-da-block="filosofia">
+  <div class="ao-container">
+    <div class="ao-grid ao-grid--2col">
+
+      <div class="ao-order-2-mobile">
+        <h2 class="ao-title ao-title--section" style="text-align:left;">
+          En armonía con la naturaleza
+        </h2>
+        <p class="ao-text ao-mb-2">
+          La filosofía del olivar se fundamenta en la convivencia respetuosa con
+          el entorno. Solo se utilizan productos autorizados por el
+          <strong>CAAE</strong> (Comité Andaluz de Agricultura Ecológica).
+          Sin contaminar el suelo, el agua ni el aire. Sin forzar la producción.
+        </p>
+        <ul class="ao-list ao-mb-cta">
+          <li>Fertilización exclusivamente con materia orgánica</li>
+          <li>Trituración de restos de poda para devolver nutrientes al suelo</li>
+          <li>Control natural de plagas y trampas ecológicas para la mosca del olivo</li>
+          <li>Poda profesional de formación y rejuvenecimiento</li>
+          <li>Manejo sostenible del suelo en cada campaña</li>
+        </ul>
+        <div class="ao-stats ao-stats--2col">
+          <div class="ao-stat">
+            <div class="ao-stat__value">CAAE</div>
+            <div class="ao-stat__label">Certificación ecológica</div>
+          </div>
+          <div class="ao-stat">
+            <div class="ao-stat__value">6</div>
+            <div class="ao-stat__label">Premios internacionales</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ao-order-1-mobile">
+        <div class="ao-card__image">
+          <img src="/wp-content/uploads/2026/05/aove-herrerillo-aceitunas.jpg"
+               alt="Aceitunas en el olivar El Herrerillo - Medina Sidonia"
+               loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. PROCESO DE ELABORACIÓN ──────────────────────────────────────── -->
+<section class="ao-section ao-section--white" data-da-block="proceso">
+  <div class="ao-container">
+    <h2 class="ao-title ao-title--section">Del olivar a la almazara</h2>
+    <p class="ao-text ao-text--center ao-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      La calidad de un gran aceite comienza mucho antes de la cosecha.
+      Cada paso está pensado para preservar la frescura y los aromas
+      naturales de la variedad Picual.
+    </p>
+
+    <div class="ao-grid ao-grid--4col">
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </svg>
+        <h3 class="ao-title ao-title--card">Cosecha temprana</h3>
+        <p class="ao-text">
+          Oct–Nov, en verde, con vareadoras. Más frescura, más
+          antioxidantes y más polifenoles en cada gota.
+        </p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <h3 class="ao-title ao-title--card">Selección manual</h3>
+        <p class="ao-text">
+          Solo aceitunas sanas. Limpieza extrema diaria de maquinaria
+          para garantizar la pureza del aceite.
+        </p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+        </svg>
+        <h3 class="ao-title ao-title--card">Extracción en frío</h3>
+        <p class="ao-text">
+          Nave a 20 °C · Batido inferior a 40 min ·
+          Sin superar 27 °C en todo el proceso.
+        </p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+        </svg>
+        <h3 class="ao-title ao-title--card">Envasado protegido</h3>
+        <p class="ao-text">
+          Botella de vidrio o lata. Siempre protegido de la luz y el calor
+          para una conservación óptima.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. PERFIL SENSORIAL ─────────────────────────────────────────────── -->
+<section class="ao-section" data-da-block="sensorial">
+  <div class="ao-container">
+    <h2 class="ao-title ao-title--section">Una gota de intensidad mediterránea</h2>
+    <p class="ao-text ao-text--center ao-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      El Picual cosechado en verde expresa todo el carácter del olivar:
+      fresco, vivo y equilibrado, característico de la máxima calidad.
+    </p>
+
+    <div class="ao-grid ao-grid--4col">
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2v20M12 2a8 8 0 0 1 8 8M12 2a8 8 0 0 0-8 8M12 22a8 8 0 0 1-8-8M12 22a8 8 0 0 0 8-8"></path>
+        </svg>
+        <h3 class="ao-title ao-title--card">Aroma</h3>
+        <p class="ao-text">Hoja de olivo, hierba recién cortada y tomate verde.</p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <h3 class="ao-title ao-title--card">Amargor</h3>
+        <p class="ao-text">Suave y equilibrado. Característico del Picual de alta calidad.</p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <h3 class="ao-title ao-title--card">Picor</h3>
+        <p class="ao-text">Picor suave en garganta. Señal de frescura y polifenoles naturales.</p>
+      </div>
+
+      <div class="ao-card ao-card--center">
+        <svg class="ao-icon ao-icon--xl ao-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <h3 class="ao-title ao-title--card">Frescura</h3>
+        <p class="ao-text">Gran intensidad aromática y estabilidad superior por la cosecha temprana.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. ANÁLISIS DE CALIDAD ─────────────────────────────────────────── -->
+<section class="ao-section ao-section--white" data-da-block="calidad">
+  <div class="ao-container">
+    <h2 class="ao-title ao-title--section">Calidad certificada por laboratorio</h2>
+    <p class="ao-text ao-text--center ao-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      Los análisis realizados por <strong>Laboratorios Espejo</strong> (Sevilla)
+      certifican que nuestro aceite supera ampliamente los estándares de un
+      AOVE ecológico de máxima calidad.
+    </p>
+
+    <!-- Métricas destacadas -->
+    <div class="ao-stats ao-mb-4"
+         style="max-width:800px;margin-left:auto;margin-right:auto;">
+      <div class="ao-stat">
+        <div class="ao-stat__value">0,14%</div>
+        <div class="ao-stat__label">Acidez campaña actual</div>
+        <div class="ao-stat__sublabel">Máx. permitido AOVE: 0,8%</div>
+      </div>
+      <div class="ao-stat">
+        <div class="ao-stat__value">3,1 meq</div>
+        <div class="ao-stat__label">Índice de peróxidos</div>
+        <div class="ao-stat__sublabel">Máx. recomendado: 20 meq</div>
+      </div>
+      <div class="ao-stat">
+        <div class="ao-stat__value">554 mg/kg</div>
+        <div class="ao-stat__label">Polifenoles (tirosol)</div>
+        <div class="ao-stat__sublabel">EFSA: +250 mg/kg para declaración saludable</div>
+      </div>
+    </div>
+
+    <!-- Ficha técnica -->
+    <div class="ao-specs">
+      <div class="ao-spec">
+        <div class="ao-spec__label">Origen</div>
+        <div class="ao-spec__value">Medina Sidonia, Cádiz, Andalucía, España</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Olivar</div>
+        <div class="ao-spec__value">El Herrerillo</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Variedad</div>
+        <div class="ao-spec__value">Picual</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Proceso</div>
+        <div class="ao-spec__value">Cosecha temprana · Extracción en frío (≤ 27 °C)</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Certificación</div>
+        <div class="ao-spec__value">CAAE — Agricultura Ecológica</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Acidez</div>
+        <div class="ao-spec__value">0,14 % (campaña actual) · Rango habitual 0,1–0,2 %</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Polifenoles</div>
+        <div class="ao-spec__value">554 mg de tirosol / kg — supera el umbral EFSA (250 mg/kg)</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Cosecha</div>
+        <div class="ao-spec__value">Octubre – Noviembre (anual, en verde)</div>
+      </div>
+      <div class="ao-spec">
+        <div class="ao-spec__label">Formato</div>
+        <div class="ao-spec__value">Botella de vidrio · Lata</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. PREMIOS Y RECONOCIMIENTOS ──────────────────────────────────── -->
+<section class="ao-section" data-da-block="premios">
+  <div class="ao-container">
+    <h2 class="ao-title ao-title--section">Reconocimiento internacional</h2>
+    <p class="ao-text ao-text--center ao-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      Un aceite que habla por sí mismo. Avalado por los certámenes ecológicos
+      más exigentes del mundo durante cinco años consecutivos.
+    </p>
+
+    <div class="ao-awards">
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <div class="ao-award__year">2019</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">Medalla de Oro — BIOL PRIZE</div>
+          <div class="ao-award__contest">Concurso Internacional de Aceites Ecológicos · Bari, Italia</div>
+        </div>
+      </div>
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <div class="ao-award__year">2019</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">1 Estrella — Great Taste</div>
+          <div class="ao-award__contest">Concurso Internacional Great Taste · Londres, Reino Unido</div>
+        </div>
+      </div>
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <div class="ao-award__year">2021</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">Medalla de Oro — BIOL PRIZE</div>
+          <div class="ao-award__contest">Concurso Internacional de Aceites Ecológicos · Bari, Italia</div>
+        </div>
+      </div>
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+          <path d="M4 22h16"></path>
+          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+        </svg>
+        <div class="ao-award__year">2022</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">Mejor Producto Ecológico de La Janda</div>
+          <div class="ao-award__contest">II Edición Premios «Sabores de La Janda» · Excelencia Agroalimentaria</div>
+        </div>
+      </div>
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <div class="ao-award__year">2023</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">Medalla de Oro — BIOL NOVELLO</div>
+          <div class="ao-award__contest">Premio al aceite de cosecha temprana · Bari, Italia</div>
+        </div>
+      </div>
+
+      <div class="ao-award">
+        <svg class="ao-award__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <div class="ao-award__year">2024</div>
+        <div class="ao-award__info">
+          <div class="ao-award__name">Medalla de Oro — BIOL PRIZE</div>
+          <div class="ao-award__contest">Concurso Internacional de Aceites Ecológicos · Bari, Italia</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. CTA BAND ─────────────────────────────────────────────────────── -->
+<section class="ao-section ao-section--navy" data-da-block="cta">
+  <img class="ao-cta__bg" src="/wp-content/uploads/2026/05/cta-aceite-bg.jpg"
+       alt="" aria-hidden="true" loading="lazy">
+  <div class="ao-container">
+    <div class="ao-cta">
+      <h2 class="ao-cta__title">Tradición, sostenibilidad y excelencia en cada gota</h2>
+      <p class="ao-text ao-text--cream ao-mb-cta" style="font-size:18px;">
+        El aceite que nació en el bosque mediterráneo de Medina Sidonia
+        y ha sido reconocido en los certámenes ecológicos más exigentes del mundo.
+      </p>
+      <div class="ao-btn-group">
+        <a href="#" class="ao-btn">
+          <svg class="ao-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Añadir al carrito
+        </a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20AOVE%20Ecol%C3%B3gico%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="ao-btn ao-btn--wa-ghost">
+          <svg class="ao-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Hablar con Hugo (WhatsApp)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 8. CONTACTO ─────────────────────────────────────────────────────── -->
+<section class="ao-section" data-da-block="contacto">
+  <div class="ao-container">
+    <div class="ao-contact">
+      <h3 class="ao-contact__title">¿Quieres saber más sobre nuestro AOVE?</h3>
+      <p class="ao-text ao-mb-cta">
+        Pregúntanos sobre el aceite o realiza un pedido B2B para tu restaurante o negocio.
+      </p>
+      <div class="ao-btn-group" style="justify-content:center;">
+        <a href="mailto:info@ladespensadelalmirante.com" class="ao-btn">Email</a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20AOVE%20Ecol%C3%B3gico%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="ao-btn ao-btn--wa-solid">
+          <svg class="ao-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.ao-page -->
+
+<!-- ── Botón back-to-top ───────────────────────────────────────────── -->
+<button type="button" class="cp-float-backtop" aria-label="Volver arriba"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+<script>
+(function(){
+  var b=document.querySelector('.cp-float-backtop');
+  if(!b)return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){b.classList.add('visible')}else{b.classList.remove('visible')}
+  },{passive:true});
+})();
+</script>
+
+<!-- ── Botón flotante WhatsApp ─────────────────────────────────────── -->
+<a class="cp-float-wa"
+   href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20AOVE%20Ecol%C3%B3gico%20de%20La%20Despensa%20del%20Almirante."
+   target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>

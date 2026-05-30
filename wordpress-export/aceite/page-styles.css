@@ -1,0 +1,515 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LA DESPENSA DEL ALMIRANTE — Estilos página /aceite
+   PEGAR EN: wp-admin → Apariencia → Personalizar → CSS adicional
+   Scoped a body.page-id-XXXX (no afecta a otras páginas)
+   ⚠️  Sustituir XXXX por el post-id real de WordPress antes de pegar
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Fuentes ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+/* ── Variables (scoped a la página) ────────────────────────────────── */
+body.page-id-XXXX {
+  --ao-navy:          #2A343E;
+  --ao-gold:          #96724D;
+  --ao-gold-hover:    #7a5a3a;
+  --ao-gold-soft:     #f9c06a;
+  --ao-coffee:        #603809;
+  --ao-cream:         #FDFBF7;
+  --ao-cream-warm:    #fff9f1;
+  --ao-cream-amber:   #FCEFD9;
+  --ao-gray:          #707070;
+  --ao-white:         #FFFFFF;
+  --ao-wa:            #25D366;
+  --ao-olive:         #5C6B2E;   /* acento sectorial /aceite */
+
+  --ao-font-display:  'Playfair Display', Georgia, serif;
+  --ao-font-body:     'Inter', sans-serif;
+
+  --ao-container-max:      1200px;
+  --ao-section-pad-y:      clamp(40px, 5vw, 72px);
+  --ao-section-pad-x:      clamp(20px, 4vw, 40px);
+  --ao-card-radius:        20px;
+  --ao-btn-radius:         9999px;
+  --ao-btn-pad:            12px 28px;
+  --ao-btn-size:           14px;
+  --ao-cta-mt:             clamp(24px, 3vw, 40px);
+  --ao-card-shadow:        0 4px 16px rgba(42,52,62,0.08);
+  --ao-card-shadow-hover:  0 16px 40px rgba(42,52,62,0.15);
+  --ao-transition:         0.3s ease;
+
+  background: var(--ao-cream);
+  color: var(--ao-navy);
+}
+
+/* ── Reset (scoped a .ao-page) ──────────────────────────────────────── */
+body.page-id-XXXX .ao-page,
+body.page-id-XXXX .ao-page *,
+body.page-id-XXXX .ao-page *::before,
+body.page-id-XXXX .ao-page *::after { box-sizing: border-box; }
+body.page-id-XXXX .ao-page * { margin: 0; padding: 0; }
+
+body.page-id-XXXX .ao-page {
+  font-family: var(--ao-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ao-navy);
+}
+body.page-id-XXXX .ao-page p:empty { display: none !important; }
+body.page-id-XXXX .ao-page img { max-width: 100%; height: auto; display: block; }
+
+/* ── Layout / Container ──────────────────────────────────────────────── */
+body.page-id-XXXX .ao-container {
+  max-width: var(--ao-container-max);
+  margin: 0 auto;
+  padding-inline: var(--ao-section-pad-x);
+}
+body.page-id-XXXX .ao-section { padding: var(--ao-section-pad-y) 0; }
+body.page-id-XXXX .ao-section--white { background: var(--ao-white); }
+body.page-id-XXXX .ao-section--navy  { background: var(--ao-navy); position: relative; overflow: hidden; }
+
+/* ── Grid ────────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-grid { display: grid; gap: 3rem; align-items: center; }
+body.page-id-XXXX .ao-grid--2col { grid-template-columns: 1fr; }
+body.page-id-XXXX .ao-grid--4col { grid-template-columns: 1fr; gap: 1.5rem; }
+
+/* ── Tipografías ─────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-title {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ao-coffee);
+}
+body.page-id-XXXX .ao-title--hero    { font-size: 48px; margin-bottom: 1rem; }
+body.page-id-XXXX .ao-title--section { font-size: clamp(28px, 3.5vw, 50px); margin-bottom: 1.5rem; text-align: center; }
+body.page-id-XXXX .ao-title--card    { font-size: clamp(17px, 1.7vw, 21px); margin-bottom: 0.75rem; }
+
+body.page-id-XXXX .ao-text {
+  font-family: var(--ao-font-body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.6;
+  color: var(--ao-gray);
+}
+body.page-id-XXXX .ao-text--center { text-align: center; }
+body.page-id-XXXX .ao-text--coffee { color: var(--ao-coffee); }
+body.page-id-XXXX .ao-text--italic { font-style: italic; }
+body.page-id-XXXX .ao-text--gold   { color: var(--ao-gold); font-size: 14px; font-weight: 600; }
+body.page-id-XXXX .ao-text--cream  { color: var(--ao-cream-amber); }
+
+/* ── Badge ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-badge {
+  display: inline-block;
+  background: var(--ao-olive);
+  color: var(--ao-white);
+  padding: 4px 12px;
+  border-radius: var(--ao-btn-radius);
+  font-family: var(--ao-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Precio ──────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-price {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--ao-gold);
+  margin-bottom: 2rem;
+}
+body.page-id-XXXX .ao-price__unit { font-size: 20px; font-weight: 400; color: var(--ao-gray); }
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--ao-gold) !important;
+  color: var(--ao-white) !important;
+  padding: var(--ao-btn-pad) !important;
+  border-radius: var(--ao-btn-radius) !important;
+  font-family: var(--ao-font-body) !important;
+  font-size: var(--ao-btn-size) !important;
+  font-weight: 600 !important;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--ao-transition);
+  min-height: auto !important;
+}
+body.page-id-XXXX .ao-btn:hover {
+  background: var(--ao-gold-hover) !important;
+  box-shadow: var(--ao-card-shadow-hover);
+  transform: translateY(-4px);
+  color: var(--ao-white) !important;
+}
+body.page-id-XXXX .ao-btn svg { stroke: currentColor !important; }
+
+body.page-id-XXXX .ao-btn--ghost {
+  background: transparent !important;
+  color: var(--ao-gold) !important;
+  border: 1.5px solid var(--ao-gold) !important;
+}
+body.page-id-XXXX .ao-btn--ghost:hover {
+  background: var(--ao-gold) !important;
+  color: var(--ao-white) !important;
+}
+
+body.page-id-XXXX .ao-btn--wa {
+  background: transparent !important;
+  color: var(--ao-wa) !important;
+  border: 1.5px solid var(--ao-wa) !important;
+}
+body.page-id-XXXX .ao-btn--wa:hover {
+  background: var(--ao-wa) !important;
+  color: var(--ao-white) !important;
+}
+
+body.page-id-XXXX .ao-btn--wa-ghost {
+  background: transparent !important;
+  color: var(--ao-white) !important;
+  border: 1.5px solid var(--ao-white) !important;
+}
+body.page-id-XXXX .ao-btn--wa-ghost:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: var(--ao-white) !important;
+}
+
+body.page-id-XXXX .ao-btn--wa-solid {
+  background: var(--ao-wa) !important;
+  color: var(--ao-white) !important;
+}
+body.page-id-XXXX .ao-btn--wa-solid:hover {
+  background: #1da854 !important;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+  color: var(--ao-white) !important;
+}
+
+body.page-id-XXXX .ao-btn--external {
+  background: transparent !important;
+  color: var(--ao-navy) !important;
+  border: 1.5px solid var(--ao-navy) !important;
+}
+body.page-id-XXXX .ao-btn--external:hover {
+  background: var(--ao-navy) !important;
+  color: var(--ao-white) !important;
+}
+
+body.page-id-XXXX .ao-btn--full { width: 100%; }
+
+body.page-id-XXXX .ao-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: var(--ao-cta-mt);
+}
+
+/* ── Selector de cantidad ────────────────────────────────────────────── */
+body.page-id-XXXX .ao-quantity { margin-bottom: var(--ao-cta-mt); }
+body.page-id-XXXX .ao-quantity__label {
+  font-family: var(--ao-font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ao-navy);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+body.page-id-XXXX .ao-quantity__controls { display: flex; align-items: center; gap: 1rem; }
+body.page-id-XXXX .ao-quantity__btn {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--ao-navy) !important;
+  background: transparent !important;
+  color: var(--ao-navy) !important;
+  font-family: var(--ao-font-body);
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--ao-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+  box-shadow: none !important;
+}
+body.page-id-XXXX .ao-quantity__btn:hover {
+  background: var(--ao-navy) !important;
+  color: var(--ao-white) !important;
+}
+body.page-id-XXXX .ao-quantity__value {
+  font-family: var(--ao-font-body);
+  font-weight: 600;
+  font-size: 18px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-card {
+  background: var(--ao-cream-amber);
+  border-radius: var(--ao-card-radius);
+  padding: clamp(32px, 5vw, 48px);
+  box-shadow: var(--ao-card-shadow);
+  transition: var(--ao-transition);
+}
+body.page-id-XXXX .ao-card:hover { box-shadow: var(--ao-card-shadow-hover); transform: translateY(-4px); }
+body.page-id-XXXX .ao-card--white { background: var(--ao-white); }
+body.page-id-XXXX .ao-card--center { text-align: center; }
+body.page-id-XXXX .ao-card__image {
+  border-radius: var(--ao-card-radius);
+  overflow: hidden;
+  box-shadow: var(--ao-card-shadow);
+  transition: var(--ao-transition);
+}
+body.page-id-XXXX .ao-card__image:hover { box-shadow: var(--ao-card-shadow-hover); transform: translateY(-4px); }
+body.page-id-XXXX .ao-card__icon { color: var(--ao-gold); margin-bottom: 1rem; width: 32px; height: 32px; }
+
+/* ── Stats ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+body.page-id-XXXX .ao-stats--2col { grid-template-columns: 1fr 1fr; }
+body.page-id-XXXX .ao-stat {
+  background: var(--ao-cream-amber);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+body.page-id-XXXX .ao-stat__value {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--ao-gold);
+  margin-bottom: 4px;
+}
+body.page-id-XXXX .ao-stat__label   { font-family: var(--ao-font-body); font-size: 14px; color: var(--ao-coffee); }
+body.page-id-XXXX .ao-stat__sublabel { font-family: var(--ao-font-body); font-size: 11px; color: var(--ao-gray); margin-top: 4px; line-height: 1.3; }
+
+/* ── Ficha técnica ───────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-specs { max-width: 800px; margin: 0 auto; }
+body.page-id-XXXX .ao-spec {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(42,52,62,0.1);
+}
+body.page-id-XXXX .ao-spec__label {
+  font-family: var(--ao-font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ao-coffee);
+}
+body.page-id-XXXX .ao-spec__value { font-family: var(--ao-font-body); font-size: 15px; color: var(--ao-navy); }
+
+/* ── Lista con puntos dorados ────────────────────────────────────────── */
+body.page-id-XXXX .ao-list { list-style: none; padding: 0; margin: 0; }
+body.page-id-XXXX .ao-list li {
+  font-family: var(--ao-font-body);
+  font-size: clamp(14px, 1.3vw, 16px);
+  color: var(--ao-gray);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-bottom: 1px solid rgba(42,52,62,0.06);
+  position: relative;
+  line-height: 1.5;
+}
+body.page-id-XXXX .ao-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ao-gold);
+}
+body.page-id-XXXX .ao-list li:last-child { border-bottom: none; }
+
+/* ── Premios (componente exclusivo /aceite) ──────────────────────────── */
+body.page-id-XXXX .ao-awards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+body.page-id-XXXX .ao-award {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--ao-white);
+  border-radius: 16px;
+  padding: 1.25rem 1.75rem;
+  box-shadow: var(--ao-card-shadow);
+  border-left: 4px solid var(--ao-gold);
+  transition: var(--ao-transition);
+}
+body.page-id-XXXX .ao-award:hover { box-shadow: var(--ao-card-shadow-hover); transform: translateY(-3px); }
+body.page-id-XXXX .ao-award__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  stroke: var(--ao-gold);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.page-id-XXXX .ao-award__year {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--ao-gold);
+  flex-shrink: 0;
+  min-width: 2.75rem;
+}
+body.page-id-XXXX .ao-award__info { flex: 1; }
+body.page-id-XXXX .ao-award__name {
+  font-family: var(--ao-font-body);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ao-navy);
+  margin-bottom: 0.15rem;
+}
+body.page-id-XXXX .ao-award__contest {
+  font-family: var(--ao-font-body);
+  font-size: 13px;
+  color: var(--ao-gray);
+  line-height: 1.4;
+}
+
+/* ── CTA Band (navy) ─────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-section--navy .ao-title { color: var(--ao-white); }
+body.page-id-XXXX .ao-cta { position: relative; z-index: 10; max-width: 600px; }
+body.page-id-XXXX .ao-cta__bg {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.18;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+body.page-id-XXXX .ao-cta__title {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  color: var(--ao-white);
+  margin-bottom: 1rem;
+}
+
+/* ── Caja de contacto ────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-contact {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--ao-white);
+  border-radius: var(--ao-card-radius);
+  padding: clamp(28px, 4vw, 52px);
+  box-shadow: var(--ao-card-shadow);
+  border: 1px solid rgba(249,192,106,.4);
+}
+body.page-id-XXXX .ao-contact__title {
+  font-family: var(--ao-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--ao-coffee);
+  margin-bottom: 1rem;
+}
+
+/* ── Iconos SVG ──────────────────────────────────────────────────────── */
+body.page-id-XXXX .ao-icon {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+body.page-id-XXXX .ao-icon--lg { width: 24px; height: 24px; }
+body.page-id-XXXX .ao-icon--xl { width: 32px; height: 32px; }
+
+/* ── Utilidades de espaciado ─────────────────────────────────────────── */
+body.page-id-XXXX .ao-mb-1   { margin-bottom: 0.5rem; }
+body.page-id-XXXX .ao-mb-2   { margin-bottom: 1rem; }
+body.page-id-XXXX .ao-mb-3   { margin-bottom: 1.5rem; }
+body.page-id-XXXX .ao-mb-4   { margin-bottom: 2rem; }
+body.page-id-XXXX .ao-mb-cta { margin-bottom: var(--ao-cta-mt); }
+
+/* ── Anular márgenes/padding del wrapper Astra ───────────────────────── */
+body.page-id-XXXX .content-area,
+body.page-id-XXXX #primary { margin: 0 !important; }
+body.page-id-XXXX .ast-article-single {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ── Full-width containers ───────────────────────────────────────────── */
+body.page-id-XXXX .site-content > .ast-container,
+body.page-id-XXXX #primary,
+body.page-id-XXXX .entry-content,
+body.page-id-XXXX .elementor-XXXX,
+body.page-id-XXXX .elementor-section,
+body.page-id-XXXX .elementor-container,
+body.page-id-XXXX .elementor-section.elementor-section-boxed > .elementor-container,
+body.page-id-XXXX .elementor-column,
+body.page-id-XXXX .elementor-widget-wrap,
+body.page-id-XXXX .ao-page {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ── Ocultar título de la página y breadcrumb del tema ───────────────── */
+body.page-id-XXXX .entry-title,
+body.page-id-XXXX .ast-breadcrumbs-wrapper,
+body.page-id-XXXX .page-header,
+body.page-id-XXXX .ast-page-header-wrap { display: none !important; }
+
+/* ── Ocultar footer del tema en /aceite ──────────────────────────────── */
+body.page-id-XXXX .site-footer,
+body.page-id-XXXX #colophon,
+body.page-id-XXXX .ast-footer-widget-area,
+body.page-id-XXXX footer.site-footer { display: none !important; }
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (min-width: 600px) {
+  body.page-id-XXXX .ao-btn-group { flex-direction: row; flex-wrap: wrap; }
+}
+@media (min-width: 768px) {
+  body.page-id-XXXX .ao-grid--2col { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .ao-grid--4col { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  body.page-id-XXXX .ao-grid--4col { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  body.page-id-XXXX .ao-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  body.page-id-XXXX .ao-title--hero { font-size: 32px; }
+  body.page-id-XXXX .ao-grid { gap: 2rem; }
+  body.page-id-XXXX .ao-spec { grid-template-columns: 1fr; gap: 0.25rem; padding: 1rem 0; }
+  body.page-id-XXXX .ao-order-2-mobile { order: 2 !important; }
+  body.page-id-XXXX .ao-order-1-mobile { order: 1 !important; }
+}
+@media (max-width: 600px) {
+  body.page-id-XXXX .ao-stats { grid-template-columns: 1fr; }
+  body.page-id-XXXX .ao-stats--2col { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .ao-section--navy .ao-cta__bg { display: none; }
+  body.page-id-XXXX .ao-award { flex-wrap: wrap; gap: 0.75rem; padding: 1.25rem; }
+}
