@@ -44,9 +44,15 @@ Cada contexto tiene su propio namespace para evitar colisiones con Astra/Element
 | `da-`   | Design system global (tokens, utilidades compartidas) | `da-design-system.css` | todas |
 | `cp-`   | Página `/cafe` (categoría café) | `cafe-styles.css` | 1231 |
 | `epg-`  | Página Elida Estate Geisha (ficha de producto) | `page-styles.css` | 1300 |
-| `co-`   | Página `/conservas` (futuro) | `conservas-styles.css` | TBD |
-| `ao-`   | Página `/aceite` (futuro) | `aceite-styles.css` | TBD |
-| `sa-`   | Página `/sales` (futuro) | `sales-styles.css` | TBD |
+| `co-`   | Página `/conservas` | `conservas-styles.css` | TBD |
+| `ao-`   | Página `/aceite` | `aceite-styles.css` | TBD |
+| `sa-`   | Página `/sales` | `sales-styles.css` | TBD |
+
+> **Contenido disponible** — antes de diseñar cualquiera de estas páginas, leer el
+> archivo de referencia de contenido de la categoría:
+> - `wordpress-export/aceite/CONTENIDO-ACEITE.md` — descripción, análisis, premios del AOVE
+> - `wordpress-export/conservas/CONTENIDO-CONSERVAS.md` — historia, catálogo de productos
+> - `wordpress-export/sales/CONTENIDO-SALES.md` — historia, catálogo (flor de sal + escamas)
 
 **Regla**: TODO el CSS de una página va scoped al `body.page-id-NNNN`:
 ```css
