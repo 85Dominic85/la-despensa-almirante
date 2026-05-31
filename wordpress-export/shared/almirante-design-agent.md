@@ -28,6 +28,27 @@ wordpress-export/cafe/elida-estate-geisha/page-styles.css  ← ref. CSS epg-*
 
 ---
 
+## 0. REGLA ABSOLUTA — Despliegue y WordPress
+
+> **Claude NUNCA modifica WordPress automáticamente.**
+> Solo puede hacerlo si el usuario lo pide **explícitamente en ese mensaje**.
+>
+> El flujo siempre es:
+> 1. Claude crea/edita los archivos locales (`wordpress-export/`)
+> 2. Usuario revisa y aprueba
+> 3. Si usuario pide desplegar → Claude lo hace; si no → documenta los pasos en el HTML
+> 4. Claude hace commit al repo
+>
+> **Prohibido técnicamente:**
+> - `DOMParser` + `innerHTML` para manipular widgets HTML de Elementor
+>   (mueve los `<style>` al `<head>` y los pierde al serializar)
+> - Usar string replacement directo sobre el widget HTML SIN DOMParser ✅
+>
+> **Si el usuario dice "recuerda linkearlo / añádelo / apúntalo"** sin pedir
+> acción en WordPress → solo se documenta en el checklist del HTML local.
+
+---
+
 ## 1. Regla de oro
 
 > Antes de escribir una sola línea de CSS, lee `da-design-system.css` y el
@@ -45,7 +66,7 @@ Cada contexto tiene su propio namespace para evitar colisiones con Astra/Element
 | `cp-`   | Página `/cafe` (categoría café) | `cafe-styles.css` | 1231 |
 | `epg-`  | Página Elida Estate Geisha (ficha de producto) | `page-styles.css` | 1300 |
 | `co-`   | Página `/conservas` | `conservas-styles.css` | TBD |
-| `ao-`   | Página `/aceite` | `aceite-styles.css` | TBD |
+| `ao-`   | Página `/aoveeco/` | `aceite/page-styles.css` | **1398** |
 | `sa-`   | Página `/sales` | `sales-styles.css` | TBD |
 
 > **Contenido disponible** — antes de diseñar cualquiera de estas páginas, leer el

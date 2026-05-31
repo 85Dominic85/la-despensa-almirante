@@ -16,3 +16,13 @@ repo-src/
 
 # Node (por si se añade tooling futuro)
 node_modules/
+
+# Archivos temporales de sesiones Claude
+.tmp_*.txt
+.tmp_*.json
+.tmp_condensed.txt
+.tmp_home_css.txt
+.tmp_inject.js
+.tmp_set_chunks.js
+.tmp_chunk*.txt
+.tmp_html_chunk*.txt
