@@ -1,0 +1,448 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     LA DESPENSA DEL ALMIRANTE — HTML página /sal
+     PEGAR EN: Widget HTML de Elementor en la página Sales (ID XXXX)
+     ⚠️  Los estilos van en wp-admin → Personalizar → CSS adicional (page-styles.css)
+     ⚠️  Sustituir XXXX por el post-id real antes de pegar el CSS
+
+     IMÁGENES — subir a /wp-content/uploads/2026/05/ antes del despliegue:
+       · sal-salinas-bahia.jpg        — paisaje de las salinas (hero)
+       · sal-recoleccion.jpg          — recolección manual artesanal
+       · sal-flor-tarro.png           — Flor de Sal (tarro producto)
+       · sal-escamas-tarro.png        — Escamas de Sal (tarro producto)
+       · cta-sal-bg.jpg               — fondo decorativo CTA band
+     ⚠️  Actualizar precios en la sección CATÁLOGO antes de publicar
+
+     DESPLIEGUE — pasos manuales en WordPress:
+       1. Crear página con slug /sal y plantilla Elementor Canvas
+       2. Anotar el post-id → reemplazar XXXX en page-styles.css
+       3. Elementor: sección full-width → widget HTML → pegar page-body.html
+       4. wp-admin → Personalizar → CSS adicional → pegar page-styles.css
+       5. Subir las imágenes de la sal a /wp-content/uploads/2026/05/
+       6. Actualizar src de imágenes en el HTML
+       7. Actualizar los precios de Flor de Sal y Escamas de Sal
+       8. En la home, actualizar el botón de la card Sal Marina a:
+          <a href="/sal/" class="btn-more">Más info →</a>
+       9. Publicar /sal y guardar la home
+      10. Verificar en desktop y móvil
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="sa-page">
+
+<!-- ── 0. HERO ─────────────────────────────────────────────────────────── -->
+<section class="sa-section" data-da-block="hero">
+  <div class="sa-container">
+    <div class="sa-grid sa-grid--2col">
+
+      <!-- Imagen salinas -->
+      <div>
+        <div class="sa-card__image">
+          <img src="/wp-content/uploads/2026/05/sal-1.png"
+               alt="Salinas artesanales de la Bahía de Cádiz — La Despensa del Almirante"
+               loading="eager">
+        </div>
+      </div>
+
+      <!-- Texto hero -->
+      <div>
+        <span class="sa-badge">BAHÍA DE CÁDIZ · ARTESANAL · PARQUE NATURAL</span>
+        <h1 class="sa-title sa-title--hero">Sales de la Bahía de Cádiz</h1>
+        <p class="sa-text sa-mb-2">
+          Sal marina virgen recolectada a mano en las salinas artesanales
+          de San Fernando, Cádiz. Solo el sol, el viento y el agua del Atlántico.
+        </p>
+        <p class="sa-text--gold sa-mb-3">
+          Flor de Sal · Escamas de Sal · Parque Natural Bahía de Cádiz
+        </p>
+        <div class="sa-btn-group" style="margin-top:var(--sa-cta-mt);">
+          <a href="#catalogo" class="sa-btn">
+            Ver productos
+          </a>
+          <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20sales%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+             target="_blank" rel="noopener" class="sa-btn sa-btn--wa">
+            WhatsApp pedido especial
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 1. HISTORIA ─────────────────────────────────────────────────────── -->
+<section class="sa-section sa-section--white" data-da-block="historia">
+  <div class="sa-container">
+    <div class="sa-grid sa-grid--2col">
+
+      <div>
+        <div class="sa-card__image">
+          <img src="/wp-content/uploads/2026/05/catuai-altoquiel-panama.png"
+               alt="Salinas históricas de la Bahía de Cádiz — San Fernando"
+               loading="lazy">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="sa-title sa-title--section" style="text-align:left;">
+          Más de 3.000 años de historia salinera
+        </h2>
+        <p class="sa-text sa-mb-2">
+          Hablar de la sal de la Bahía de Cádiz es hablar de la historia de
+          <strong>San Fernando</strong>, sus marismas y sus salinas artesanales.
+          Los fenicios llegaron a estas tierras hace más de 3.000 años y
+          desarrollaron una actividad vinculada al comercio marítimo, las
+          salinas y la conservación de alimentos.
+        </p>
+        <p class="sa-text sa-mb-2">
+          El territorio actual de San Fernando se conocía en época clásica
+          como <strong>Antípolis</strong> — «frente a la ciudad», frente a la
+          antigua Gadir. Durante la época romana, la Bahía de Cádiz se
+          convirtió en uno de los principales centros productores de sal
+          del Imperio Romano.
+        </p>
+        <p class="sa-text sa-text--coffee sa-text--italic sa-mb-cta">
+          Las actuales salinas artesanales son herederas directas de esa
+          tradición milenaria, conectando el presente con los orígenes
+          fenicios y romanos de la región.
+        </p>
+        <div class="sa-stats sa-stats--2col">
+          <div class="sa-stat">
+            <div class="sa-stat__value">+3.000</div>
+            <div class="sa-stat__label">Años de tradición salinera</div>
+          </div>
+          <div class="sa-stat">
+            <div class="sa-stat__value">Parque Natural</div>
+            <div class="sa-stat__label">Bahía de Cádiz, San Fernando</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. PROCESO ARTESANAL ───────────────────────────────────────────── -->
+<section class="sa-section" data-da-block="proceso">
+  <div class="sa-container">
+    <div class="sa-grid sa-grid--2col">
+
+      <div class="sa-order-2-mobile">
+        <h2 class="sa-title sa-title--section" style="text-align:left;">
+          Sol, viento y agua del Atlántico
+        </h2>
+        <p class="sa-text sa-mb-2">
+          La producción artesanal conserva intactas las propiedades minerales
+          y organolépticas de la sal marina virgen. Las sales de La Despensa
+          del Almirante se obtienen únicamente mediante la acción del sol,
+          el viento y el agua del Atlántico.
+        </p>
+        <ul class="sa-list sa-mb-cta">
+          <li>Recolección manual y sostenible</li>
+          <li>Tiempos naturales de cristalización respetados</li>
+          <li>Sin procesos industriales agresivos</li>
+          <li>Sin aditivos químicos ni refinados</li>
+          <li>Estructura mineral natural conservada</li>
+        </ul>
+        <div class="sa-stats sa-stats--2col">
+          <div class="sa-stat">
+            <div class="sa-stat__value">100%</div>
+            <div class="sa-stat__label">Recolección manual</div>
+          </div>
+          <div class="sa-stat">
+            <div class="sa-stat__value">0</div>
+            <div class="sa-stat__label">Aditivos químicos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sa-order-1-mobile">
+        <div class="sa-card__image">
+          <img src="/wp-content/uploads/2026/05/lamastus-finca1.jpg"
+               alt="Proceso artesanal de recolección de sal en la Bahía de Cádiz"
+               loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. CATÁLOGO DE PRODUCTOS ────────────────────────────────────────── -->
+<section class="sa-section sa-section--white" id="catalogo" data-da-block="catalogo">
+  <div class="sa-container">
+    <h2 class="sa-title sa-title--section">Nuestra Selección de Sales</h2>
+    <p class="sa-text sa-text--center sa-mb-4"
+       style="max-width:680px;margin-left:auto;margin-right:auto;">
+      Dos joyas artesanales de las salinas de San Fernando,
+      para el acabado perfecto de cualquier plato.
+    </p>
+
+    <div class="sa-products">
+
+      <!-- Flor de Sal -->
+      <article class="sa-product">
+        <div class="sa-product__image">
+          <img src="/wp-content/uploads/2026/05/sal-1.png"
+               alt="Flor de Sal — La Despensa del Almirante"
+               loading="lazy">
+        </div>
+        <div class="sa-product__body">
+          <span class="sa-product__tag">Producción limitada</span>
+          <h3 class="sa-product__title">Flor de Sal</h3>
+          <p class="sa-product__desc">
+            Delicada capa de finos cristales que se forma en la superficie
+            del agua de las salinas bajo condiciones muy concretas de
+            temperatura, viento y evaporación. La joya de las salinas
+            gaditanas.
+          </p>
+          <p class="sa-product__uses">
+            Ideal en acabado final: carnes, pescados, verduras, ensaladas,
+            chocolates y postres gourmet.
+          </p>
+          <!-- ⚠️ Actualizar precio antes de publicar -->
+          <div class="sa-price">00,00 € <span class="sa-price__unit">/ 200 g · 250 g</span></div>
+          <div class="sa-btn-group">
+            <a href="#" class="sa-btn">
+              <svg class="sa-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al carrito
+            </a>
+            <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20la%20Flor%20de%20Sal%20de%20La%20Despensa%20del%20Almirante."
+               target="_blank" rel="noopener" class="sa-btn sa-btn--wa">
+              WhatsApp pedido
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Escamas de Sal -->
+      <article class="sa-product">
+        <div class="sa-product__image">
+          <img src="/wp-content/uploads/2026/05/sal-1.png"
+               alt="Escamas de Sal — La Despensa del Almirante"
+               loading="lazy">
+        </div>
+        <div class="sa-product__body">
+          <span class="sa-product__tag">Cocina de autor</span>
+          <h3 class="sa-product__title">Escamas de Sal</h3>
+          <p class="sa-product__desc">
+            Textura ligera y crujiente, rápida disolución sobre el alimento.
+            Aporta contraste de textura y un toque sofisticado que eleva
+            cualquier plato. Perfecta para la cocina creativa y de autor.
+          </p>
+          <p class="sa-product__uses">
+            Carnes a la brasa, pescados, verduras asadas, foie
+            y cocina creativa.
+          </p>
+          <!-- ⚠️ Actualizar precio antes de publicar -->
+          <div class="sa-price">00,00 € <span class="sa-price__unit">/ 200 g · 250 g</span></div>
+          <div class="sa-btn-group">
+            <a href="#" class="sa-btn">
+              <svg class="sa-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al carrito
+            </a>
+            <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20Escamas%20de%20Sal%20de%20La%20Despensa%20del%20Almirante."
+               target="_blank" rel="noopener" class="sa-btn sa-btn--wa">
+              WhatsApp pedido
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. PROPIEDADES MINERALES ────────────────────────────────────────── -->
+<section class="sa-section" data-da-block="propiedades">
+  <div class="sa-container">
+    <h2 class="sa-title sa-title--section">Mucho más que un condimento</h2>
+    <p class="sa-text sa-text--center sa-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      La sal marina virgen artesanal conserva minerales naturales presentes
+      en el agua del mar que se pierden en las sales refinadas industriales.
+    </p>
+
+    <div class="sa-grid sa-grid--4col">
+
+      <div class="sa-card sa-card--center">
+        <svg class="sa-icon sa-icon--xl sa-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </svg>
+        <h3 class="sa-title sa-title--card">Magnesio</h3>
+        <p class="sa-text">Función muscular y nerviosa. Mayor equilibrio electrolítico.</p>
+      </div>
+
+      <div class="sa-card sa-card--center">
+        <svg class="sa-icon sa-icon--xl sa-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <h3 class="sa-title sa-title--card">Potasio y Calcio</h3>
+        <p class="sa-text">Equilibrio electrolítico y salud ósea. Menor agresividad salina.</p>
+      </div>
+
+      <div class="sa-card sa-card--center">
+        <svg class="sa-icon sa-icon--xl sa-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <h3 class="sa-title sa-title--card">Yodo y Hierro</h3>
+        <p class="sa-text">Función tiroidea y transporte de oxígeno. Oligoelementos naturales.</p>
+      </div>
+
+      <div class="sa-card sa-card--center">
+        <svg class="sa-icon sa-icon--xl sa-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <h3 class="sa-title sa-title--card">Sabor superior</h3>
+        <p class="sa-text">Mayor complejidad gastronómica. Sin aditivos. Mejor experiencia culinaria.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. SOSTENIBILIDAD ────────────────────────────────────────────────── -->
+<section class="sa-section sa-section--white" data-da-block="sostenibilidad">
+  <div class="sa-container">
+    <div class="sa-grid sa-grid--2col">
+
+      <div>
+        <div class="sa-card__image">
+          <img src="/wp-content/uploads/2026/05/lamastus-finca1.jpg"
+               alt="Biodiversidad en las marismas salineras de la Bahía de Cádiz"
+               loading="lazy">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="sa-title sa-title--section" style="text-align:left;">
+          Salinas que dan vida
+        </h2>
+        <p class="sa-text sa-mb-2">
+          Las salinas artesanales no solo producen sal: también generan
+          ecosistemas únicos. Las marismas salineras de la Bahía de Cádiz
+          albergan una fauna y flora excepcionales dentro del
+          <strong>Parque Natural Bahía de Cádiz</strong>.
+        </p>
+        <p class="sa-text sa-mb-3">
+          Flamencos, avocetas, cigüeñuelas, espátulas y peces de estero
+          conviven en un entorno donde el trabajo artesanal humano y la
+          naturaleza se encuentran en equilibrio.
+        </p>
+        <p class="sa-text sa-text--coffee sa-text--italic sa-mb-cta">
+          Mantener viva la actividad artesanal significa conservar un
+          patrimonio histórico, proteger los ecosistemas y apoyar una
+          economía sostenible y local.
+        </p>
+        <div class="sa-stats sa-stats--2col">
+          <div class="sa-stat">
+            <div class="sa-stat__value">Parque Natural</div>
+            <div class="sa-stat__label">Bahía de Cádiz protegida</div>
+          </div>
+          <div class="sa-stat">
+            <div class="sa-stat__value">Artesanal</div>
+            <div class="sa-stat__label">100% recolección manual</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. CTA BAND ─────────────────────────────────────────────────────── -->
+<section class="sa-section sa-section--navy" data-da-block="cta">
+  <img class="sa-cta__bg" src="/wp-content/uploads/2026/05/cta-coffee-beans.png"
+       alt="" aria-hidden="true" loading="lazy">
+  <div class="sa-container">
+    <div class="sa-cta">
+      <h2 class="sa-cta__title">Cada cristal recoge siglos de historia</h2>
+      <p class="sa-text sa-text--cream sa-mb-cta" style="font-size:18px;">
+        El trabajo artesanal de las salinas y la esencia del mar
+        de Cádiz en cada tarro.
+      </p>
+      <div class="sa-btn-group">
+        <a href="#catalogo" class="sa-btn">
+          <svg class="sa-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Ver productos
+        </a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20sales%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="sa-btn sa-btn--wa-ghost">
+          <svg class="sa-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Hablar con Hugo (WhatsApp)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. CONTACTO ─────────────────────────────────────────────────────── -->
+<section class="sa-section" data-da-block="contacto">
+  <div class="sa-container">
+    <div class="sa-contact">
+      <h3 class="sa-contact__title">¿Quieres saber más o hacer un pedido B2B?</h3>
+      <p class="sa-text sa-mb-cta">
+        Contacta con nosotros para pedidos especiales, distribución
+        o cualquier consulta sobre nuestras sales artesanales.
+      </p>
+      <div class="sa-btn-group" style="justify-content:center;">
+        <a href="mailto:info@ladespensadelalmirante.com" class="sa-btn">Email</a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20sales%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="sa-btn sa-btn--wa-solid">
+          <svg class="sa-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.sa-page -->
+
+<!-- ── Botón back-to-top ───────────────────────────────────────────── -->
+<button type="button" class="cp-float-backtop" aria-label="Volver arriba"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+<script>
+(function(){
+  var b=document.querySelector('.cp-float-backtop');
+  if(!b)return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){b.classList.add('visible')}else{b.classList.remove('visible')}
+  },{passive:true});
+})();
+</script>
+
+<!-- ── Botón flotante WhatsApp ─────────────────────────────────────── -->
+<a class="cp-float-wa"
+   href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20sales%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+   target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>

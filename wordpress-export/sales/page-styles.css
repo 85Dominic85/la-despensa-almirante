@@ -1,0 +1,455 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LA DESPENSA DEL ALMIRANTE — Estilos página /sal
+   PEGAR EN: wp-admin → Apariencia → Personalizar → CSS adicional
+   Scoped a body.page-id-XXXX (no afecta a otras páginas)
+   ⚠️  Sustituir XXXX por el post-id real de WordPress antes de pegar
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Fuentes ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+/* ── Variables (scoped a la página) ────────────────────────────────── */
+body.page-id-XXXX {
+  --sa-navy:          #2A343E;
+  --sa-gold:          #96724D;
+  --sa-gold-hover:    #7a5a3a;
+  --sa-gold-soft:     #f9c06a;
+  --sa-coffee:        #603809;
+  --sa-cream:         #FDFBF7;
+  --sa-cream-warm:    #fff9f1;
+  --sa-cream-amber:   #FCEFD9;
+  --sa-gray:          #707070;
+  --sa-white:         #FFFFFF;
+  --sa-wa:            #25D366;
+  --sa-sea:           #4A7C9B;   /* acento sectorial /sal — azul Atlántico */
+
+  --sa-font-display:  'Playfair Display', Georgia, serif;
+  --sa-font-body:     'Inter', sans-serif;
+
+  --sa-container-max:      1200px;
+  --sa-section-pad-y:      clamp(40px, 5vw, 72px);
+  --sa-section-pad-x:      clamp(20px, 4vw, 40px);
+  --sa-card-radius:        20px;
+  --sa-btn-radius:         9999px;
+  --sa-btn-pad:            12px 28px;
+  --sa-btn-size:           14px;
+  --sa-cta-mt:             clamp(24px, 3vw, 40px);
+  --sa-card-shadow:        0 4px 16px rgba(42,52,62,0.08);
+  --sa-card-shadow-hover:  0 16px 40px rgba(42,52,62,0.15);
+  --sa-transition:         0.3s ease;
+
+  background: var(--sa-cream);
+  color: var(--sa-navy);
+}
+
+/* ── Reset (scoped a .sa-page) ──────────────────────────────────────── */
+body.page-id-XXXX .sa-page,
+body.page-id-XXXX .sa-page *,
+body.page-id-XXXX .sa-page *::before,
+body.page-id-XXXX .sa-page *::after { box-sizing: border-box; }
+body.page-id-XXXX .sa-page * { margin: 0; padding: 0; }
+
+body.page-id-XXXX .sa-page {
+  font-family: var(--sa-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sa-navy);
+}
+body.page-id-XXXX .sa-page p:empty { display: none !important; }
+body.page-id-XXXX .sa-page img { max-width: 100%; height: auto; display: block; }
+
+/* ── Layout / Container ──────────────────────────────────────────────── */
+body.page-id-XXXX .sa-container {
+  max-width: var(--sa-container-max);
+  margin: 0 auto;
+  padding-inline: var(--sa-section-pad-x);
+}
+body.page-id-XXXX .sa-section { padding: var(--sa-section-pad-y) 0; }
+body.page-id-XXXX .sa-section--white { background: var(--sa-white); }
+body.page-id-XXXX .sa-section--navy  { background: var(--sa-navy); position: relative; overflow: hidden; }
+
+/* ── Grid ────────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-grid { display: grid; gap: 3rem; align-items: center; }
+body.page-id-XXXX .sa-grid--2col { grid-template-columns: 1fr; }
+body.page-id-XXXX .sa-grid--4col { grid-template-columns: 1fr; gap: 1.5rem; }
+
+/* ── Tipografías ─────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-title {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sa-coffee);
+}
+body.page-id-XXXX .sa-title--hero    { font-size: clamp(36px, 5vw, 56px); margin-bottom: 1rem; }
+body.page-id-XXXX .sa-title--section { font-size: clamp(28px, 3.5vw, 50px); margin-bottom: 1.5rem; text-align: center; }
+body.page-id-XXXX .sa-title--card    { font-size: clamp(17px, 1.7vw, 21px); margin-bottom: 0.75rem; }
+
+body.page-id-XXXX .sa-text {
+  font-family: var(--sa-font-body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.6;
+  color: var(--sa-gray);
+}
+body.page-id-XXXX .sa-text--center { text-align: center; }
+body.page-id-XXXX .sa-text--coffee { color: var(--sa-coffee); }
+body.page-id-XXXX .sa-text--italic { font-style: italic; }
+body.page-id-XXXX .sa-text--gold   { color: var(--sa-gold); font-size: 14px; font-weight: 600; }
+body.page-id-XXXX .sa-text--cream  { color: var(--sa-cream-amber); }
+
+/* ── Badge ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-badge {
+  display: inline-block;
+  background: var(--sa-sea);
+  color: var(--sa-white);
+  padding: 4px 12px;
+  border-radius: var(--sa-btn-radius);
+  font-family: var(--sa-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Precio ──────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-price {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--sa-gold);
+  margin-bottom: 1.5rem;
+}
+body.page-id-XXXX .sa-price__unit { font-size: 18px; font-weight: 400; color: var(--sa-gray); }
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--sa-gold) !important;
+  color: var(--sa-white) !important;
+  padding: var(--sa-btn-pad) !important;
+  border-radius: var(--sa-btn-radius) !important;
+  font-family: var(--sa-font-body) !important;
+  font-size: var(--sa-btn-size) !important;
+  font-weight: 600 !important;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--sa-transition);
+  min-height: auto !important;
+}
+body.page-id-XXXX .sa-btn:hover {
+  background: var(--sa-gold-hover) !important;
+  box-shadow: var(--sa-card-shadow-hover);
+  transform: translateY(-4px);
+  color: var(--sa-white) !important;
+}
+body.page-id-XXXX .sa-btn svg { stroke: currentColor !important; }
+
+body.page-id-XXXX .sa-btn--ghost {
+  background: transparent !important;
+  color: var(--sa-gold) !important;
+  border: 1.5px solid var(--sa-gold) !important;
+}
+body.page-id-XXXX .sa-btn--ghost:hover {
+  background: var(--sa-gold) !important;
+  color: var(--sa-white) !important;
+}
+
+body.page-id-XXXX .sa-btn--wa {
+  background: transparent !important;
+  color: var(--sa-wa) !important;
+  border: 1.5px solid var(--sa-wa) !important;
+}
+body.page-id-XXXX .sa-btn--wa:hover {
+  background: var(--sa-wa) !important;
+  color: var(--sa-white) !important;
+}
+
+body.page-id-XXXX .sa-btn--wa-ghost {
+  background: transparent !important;
+  color: var(--sa-white) !important;
+  border: 1.5px solid var(--sa-white) !important;
+}
+body.page-id-XXXX .sa-btn--wa-ghost:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: var(--sa-white) !important;
+}
+
+body.page-id-XXXX .sa-btn--wa-solid {
+  background: var(--sa-wa) !important;
+  color: var(--sa-white) !important;
+}
+body.page-id-XXXX .sa-btn--wa-solid:hover {
+  background: #1da854 !important;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+  color: var(--sa-white) !important;
+}
+
+body.page-id-XXXX .sa-btn--full { width: 100%; }
+
+body.page-id-XXXX .sa-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: var(--sa-cta-mt);
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-card {
+  background: var(--sa-cream-amber);
+  border-radius: var(--sa-card-radius);
+  padding: clamp(28px, 4vw, 44px);
+  box-shadow: var(--sa-card-shadow);
+  transition: var(--sa-transition);
+}
+body.page-id-XXXX .sa-card:hover { box-shadow: var(--sa-card-shadow-hover); transform: translateY(-4px); }
+body.page-id-XXXX .sa-card--white { background: var(--sa-white); }
+body.page-id-XXXX .sa-card--center { text-align: center; }
+body.page-id-XXXX .sa-card__image {
+  border-radius: var(--sa-card-radius);
+  overflow: hidden;
+  box-shadow: var(--sa-card-shadow);
+  transition: var(--sa-transition);
+}
+body.page-id-XXXX .sa-card__image:hover { box-shadow: var(--sa-card-shadow-hover); transform: translateY(-4px); }
+body.page-id-XXXX .sa-card__icon { color: var(--sa-gold); margin-bottom: 1rem; width: 32px; height: 32px; }
+
+/* ── Tarjetas de producto (catálogo) ─────────────────────────────────── */
+body.page-id-XXXX .sa-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+body.page-id-XXXX .sa-product {
+  background: var(--sa-white);
+  border-radius: var(--sa-card-radius);
+  overflow: hidden;
+  box-shadow: var(--sa-card-shadow);
+  transition: var(--sa-transition);
+  border: 1px solid rgba(150,114,77,0.15);
+}
+body.page-id-XXXX .sa-product:hover { box-shadow: var(--sa-card-shadow-hover); transform: translateY(-4px); }
+body.page-id-XXXX .sa-product__image { aspect-ratio: 4/3; overflow: hidden; }
+body.page-id-XXXX .sa-product__image img { width: 100%; height: 100%; object-fit: cover; }
+body.page-id-XXXX .sa-product__body { padding: 2rem; }
+body.page-id-XXXX .sa-product__tag {
+  display: inline-block;
+  background: var(--sa-sea);
+  color: var(--sa-white);
+  padding: 3px 10px;
+  border-radius: var(--sa-btn-radius);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+body.page-id-XXXX .sa-product__title {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.5vw, 28px);
+  color: var(--sa-coffee);
+  margin-bottom: 0.75rem;
+}
+body.page-id-XXXX .sa-product__desc {
+  font-family: var(--sa-font-body);
+  font-size: 15px;
+  color: var(--sa-gray);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+body.page-id-XXXX .sa-product__uses {
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  color: var(--sa-coffee);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* ── Stats ───────────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+body.page-id-XXXX .sa-stats--2col { grid-template-columns: 1fr 1fr; }
+body.page-id-XXXX .sa-stat {
+  background: var(--sa-cream-amber);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+body.page-id-XXXX .sa-stat__value {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--sa-gold);
+  margin-bottom: 4px;
+}
+body.page-id-XXXX .sa-stat__label { font-family: var(--sa-font-body); font-size: 13px; color: var(--sa-coffee); }
+
+/* ── Ficha de propiedades ────────────────────────────────────────────── */
+body.page-id-XXXX .sa-specs { max-width: 800px; margin: 0 auto; }
+body.page-id-XXXX .sa-spec {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(42,52,62,0.1);
+}
+body.page-id-XXXX .sa-spec__label {
+  font-family: var(--sa-font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--sa-coffee);
+}
+body.page-id-XXXX .sa-spec__value { font-family: var(--sa-font-body); font-size: 15px; color: var(--sa-navy); }
+
+/* ── Lista con puntos dorados ────────────────────────────────────────── */
+body.page-id-XXXX .sa-list { list-style: none; padding: 0; margin: 0; }
+body.page-id-XXXX .sa-list li {
+  font-family: var(--sa-font-body);
+  font-size: clamp(14px, 1.3vw, 16px);
+  color: var(--sa-gray);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-bottom: 1px solid rgba(42,52,62,0.06);
+  position: relative;
+  line-height: 1.5;
+}
+body.page-id-XXXX .sa-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sa-gold);
+}
+body.page-id-XXXX .sa-list li:last-child { border-bottom: none; }
+
+/* ── CTA Band (navy) ─────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-section--navy .sa-title { color: var(--sa-white); }
+body.page-id-XXXX .sa-cta { position: relative; z-index: 10; max-width: 600px; }
+body.page-id-XXXX .sa-cta__bg {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 50%; height: 100%;
+  opacity: 0.18; object-fit: cover;
+  pointer-events: none; z-index: 1;
+}
+body.page-id-XXXX .sa-cta__title {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  color: var(--sa-white);
+  margin-bottom: 1rem;
+}
+
+/* ── Caja de contacto ────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-contact {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--sa-white);
+  border-radius: var(--sa-card-radius);
+  padding: clamp(28px, 4vw, 52px);
+  box-shadow: var(--sa-card-shadow);
+  border: 1px solid rgba(249,192,106,.4);
+}
+body.page-id-XXXX .sa-contact__title {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--sa-coffee);
+  margin-bottom: 1rem;
+}
+
+/* ── Iconos SVG ──────────────────────────────────────────────────────── */
+body.page-id-XXXX .sa-icon {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+body.page-id-XXXX .sa-icon--lg { width: 24px; height: 24px; }
+body.page-id-XXXX .sa-icon--xl { width: 32px; height: 32px; }
+
+/* ── Utilidades de espaciado ─────────────────────────────────────────── */
+body.page-id-XXXX .sa-mb-1   { margin-bottom: 0.5rem; }
+body.page-id-XXXX .sa-mb-2   { margin-bottom: 1rem; }
+body.page-id-XXXX .sa-mb-3   { margin-bottom: 1.5rem; }
+body.page-id-XXXX .sa-mb-4   { margin-bottom: 2rem; }
+body.page-id-XXXX .sa-mb-cta { margin-bottom: var(--sa-cta-mt); }
+
+/* ── Anular márgenes/padding del wrapper Astra ───────────────────────── */
+body.page-id-XXXX .content-area,
+body.page-id-XXXX #primary { margin: 0 !important; }
+body.page-id-XXXX .ast-article-single {
+  padding: 0 !important; margin: 0 !important;
+  background: transparent !important; border: none !important;
+}
+
+/* ── Full-width containers ───────────────────────────────────────────── */
+body.page-id-XXXX .site-content > .ast-container,
+body.page-id-XXXX #primary,
+body.page-id-XXXX .entry-content,
+body.page-id-XXXX .elementor-XXXX,
+body.page-id-XXXX .elementor-section,
+body.page-id-XXXX .elementor-container,
+body.page-id-XXXX .elementor-section.elementor-section-boxed > .elementor-container,
+body.page-id-XXXX .elementor-column,
+body.page-id-XXXX .elementor-widget-wrap,
+body.page-id-XXXX .sa-page {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ── Ocultar título de la página y breadcrumb del tema ───────────────── */
+body.page-id-XXXX .entry-title,
+body.page-id-XXXX .ast-breadcrumbs-wrapper,
+body.page-id-XXXX .page-header,
+body.page-id-XXXX .ast-page-header-wrap { display: none !important; }
+
+/* ── Ocultar footer del tema en /sal ─────────────────────────────────── */
+body.page-id-XXXX .site-footer,
+body.page-id-XXXX #colophon,
+body.page-id-XXXX .ast-footer-widget-area,
+body.page-id-XXXX footer.site-footer { display: none !important; }
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (min-width: 600px) {
+  body.page-id-XXXX .sa-btn-group { flex-direction: row; flex-wrap: wrap; }
+}
+@media (min-width: 768px) {
+  body.page-id-XXXX .sa-grid--2col { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .sa-grid--4col { grid-template-columns: repeat(2, 1fr); }
+  body.page-id-XXXX .sa-products   { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+}
+@media (min-width: 900px) {
+  body.page-id-XXXX .sa-grid--4col { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  body.page-id-XXXX .sa-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  body.page-id-XXXX .sa-title--hero { font-size: 32px; }
+  body.page-id-XXXX .sa-grid { gap: 2rem; }
+  body.page-id-XXXX .sa-spec { grid-template-columns: 1fr; gap: 0.25rem; padding: 1rem 0; }
+  body.page-id-XXXX .sa-order-2-mobile { order: 2 !important; }
+  body.page-id-XXXX .sa-order-1-mobile { order: 1 !important; }
+}
+@media (max-width: 600px) {
+  body.page-id-XXXX .sa-stats { grid-template-columns: 1fr; }
+  body.page-id-XXXX .sa-stats--2col { grid-template-columns: 1fr 1fr; }
+  body.page-id-XXXX .sa-section--navy .sa-cta__bg { display: none; }
+}
