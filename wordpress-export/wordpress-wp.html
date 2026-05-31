@@ -287,6 +287,7 @@
       transition: box-shadow 0.5s, transform 0.5s;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
     .product-card:hover {
       box-shadow: 0 20px 50px rgba(42,52,62,0.15);
@@ -365,6 +366,12 @@
       transition: text-decoration 0.15s;
     }
     .btn-more:hover { text-decoration: underline; color: var(--gold); }
+    .btn-more::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
 
     /* ── EQUIPO ── */
     #equipo { background: var(--white); }
