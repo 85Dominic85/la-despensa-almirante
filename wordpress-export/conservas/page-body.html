@@ -1,0 +1,429 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     LA DESPENSA DEL ALMIRANTE — HTML página /conservas-cadiz
+     PEGAR EN: Widget HTML de Elementor (ID XXXX)
+     ⚠️  Estilos en wp-admin → Personalizar → CSS adicional (page-styles.css)
+     ⚠️  Sustituir XXXX por el post-id real antes de pegar el CSS
+
+     IMÁGENES — subir a /wp-content/uploads/2026/05/ antes del despliegue:
+       · conservas-bahia.jpg          — Bahía de Cádiz / puerto (hero)
+       · conservas-fabrica.jpg        — interior de la fábrica artesanal
+       · conservas-caballa-ao.png     — Caballas en Aceite de Oliva (lata)
+       · conservas-caballa-px.png     — Caballas al Pedro Ximénez (lata)
+       · conservas-chicharron.png     — Chicharrón de Atún (lata)
+       · cta-conservas-bg.jpg         — fondo decorativo CTA band
+     ⚠️  Actualizar precios en la sección CATÁLOGO antes de publicar
+
+     DESPLIEGUE — pasos manuales en WordPress:
+       1. Crear página con slug /conservas-cadiz y plantilla Elementor Canvas
+       2. Anotar el post-id → reemplazar XXXX en page-styles.css
+       3. Elementor: sección full-width → widget HTML → pegar page-body.html
+       4. wp-admin → Personalizar → CSS adicional → pegar page-styles.css
+       5. Subir imágenes de las conservas a /wp-content/uploads/2026/05/
+       6. Actualizar src de imágenes en el HTML
+       7. Actualizar los precios de los 3 productos
+       8. En la home, actualizar el botón de la card Caballas a:
+          <a href="/conservas-cadiz/" class="btn-more">Más info →</a>
+       9. Publicar /conservas-cadiz y guardar la home
+      10. Verificar en desktop y móvil
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="co-page">
+
+<!-- ── 0. HERO ─────────────────────────────────────────────────────────── -->
+<section class="co-section" data-da-block="hero">
+  <div class="co-container">
+    <div class="co-grid co-grid--2col">
+
+      <div>
+        <div class="co-card__image">
+          <img src="/wp-content/uploads/2026/05/caballas-1.png"
+               alt="Conservas artesanales de la Bahía de Cádiz — La Despensa del Almirante"
+               loading="eager">
+        </div>
+      </div>
+
+      <div>
+        <span class="co-badge">SAN FERNANDO · BAHÍA DE CÁDIZ · ARTESANAL</span>
+        <h1 class="co-title co-title--hero">Conservas de la Bahía de Cádiz</h1>
+        <p class="co-text co-mb-2">
+          Tradición marinera de San Fernando convertida en gastronomía.
+          Elaboradas a mano con pescado fresco de la Bahía, siguiendo
+          las recetas de siempre desde los años 50.
+        </p>
+        <p class="co-text--gold co-mb-3">
+          Caballas en Aceite de Oliva · Caballas al Pedro Ximénez · Chicharrón de Atún
+        </p>
+        <div class="co-btn-group" style="margin-top:var(--co-cta-mt);">
+          <a href="#catalogo" class="co-btn">
+            Ver productos
+          </a>
+          <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20conservas%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+             target="_blank" rel="noopener" class="co-btn co-btn--wa">
+            WhatsApp pedido especial
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 1. HISTORIA ─────────────────────────────────────────────────────── -->
+<section class="co-section co-section--white" data-da-block="historia">
+  <div class="co-container">
+    <div class="co-grid co-grid--2col">
+
+      <div>
+        <div class="co-card__image">
+          <img src="/wp-content/uploads/2026/05/catuai-altoquiel-panama.png"
+               alt="Bahía de Cádiz — 3.000 años de historia conservera"
+               loading="lazy">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="co-title co-title--section" style="text-align:left;">
+          Más de 3.000 años de tradición conservera
+        </h2>
+        <p class="co-text co-mb-2">
+          La historia de las conservas de pescado en la Bahía de Cádiz se
+          remonta a más de tres mil años. Los fenicios descubrieron el valor
+          de estas costas para la pesca, la producción de sal y la conservación
+          de alimentos. Convirtieron <strong>San Fernando (La Isla de León)</strong>
+          en uno de los centros pesqueros más importantes del Mediterráneo occidental.
+        </p>
+        <p class="co-text co-mb-2">
+          Los romanos perfeccionaron sus técnicas y transformaron la zona en
+          una potencia exportadora. En excavaciones arqueológicas en Cádiz se
+          han encontrado factorías romanas donde se elaboraban salazones,
+          mojamas y el famoso <strong>garum</strong> — la salsa de lujo
+          del Imperio Romano.
+        </p>
+        <p class="co-text co-text--coffee co-text--italic co-mb-cta">
+          «La abundancia de sal marina de la Isla de León permitió el desarrollo
+          de una actividad conservera que ha llegado hasta nuestros días como
+          una de las grandes señas de identidad de la Bahía de Cádiz.»
+        </p>
+        <div class="co-stats co-stats--2col">
+          <div class="co-stat">
+            <div class="co-stat__value">+3.000</div>
+            <div class="co-stat__label">Años de tradición conservera</div>
+          </div>
+          <div class="co-stat">
+            <div class="co-stat__value">Desde los 50</div>
+            <div class="co-stat__label">Elaboración artesanal</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. PROCESO ARTESANAL ───────────────────────────────────────────── -->
+<section class="co-section" data-da-block="proceso">
+  <div class="co-container">
+    <div class="co-grid co-grid--2col">
+
+      <div class="co-order-2-mobile">
+        <h2 class="co-title co-title--section" style="text-align:left;">
+          El sabor auténtico de la Bahía
+        </h2>
+        <p class="co-text co-mb-2">
+          Las conservas de La Despensa del Almirante se fabrican a partir
+          de técnicas tradicionales artesanales. La materia prima procede
+          de las costas gaditanas y de las aguas de la Bahía de Cádiz,
+          manteniendo una estrecha relación con la tradición pesquera local.
+        </p>
+        <ul class="co-list co-mb-cta">
+          <li>Selección del pescado fresco de la Bahía de Cádiz</li>
+          <li>Elaboración manual con limpieza cuidadosa</li>
+          <li>Empacado a mano, lata a lata</li>
+          <li>Receta heredada de la familia fundadora de la planta</li>
+          <li>Producción limitada y de temporada</li>
+        </ul>
+        <div class="co-stats co-stats--2col">
+          <div class="co-stat">
+            <div class="co-stat__value">100%</div>
+            <div class="co-stat__label">Pescado fresco local</div>
+          </div>
+          <div class="co-stat">
+            <div class="co-stat__value">Manual</div>
+            <div class="co-stat__label">Elaboración artesanal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="co-order-1-mobile">
+        <div class="co-card__image">
+          <img src="/wp-content/uploads/2026/05/lamastus-finca1.jpg"
+               alt="Proceso artesanal de elaboración de conservas en San Fernando"
+               loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. CATÁLOGO DE PRODUCTOS ────────────────────────────────────────── -->
+<section class="co-section co-section--white" id="catalogo" data-da-block="catalogo">
+  <div class="co-container">
+    <h2 class="co-title co-title--section">Nuestra Selección de Conservas</h2>
+    <p class="co-text co-text--center co-mb-4"
+       style="max-width:680px;margin-left:auto;margin-right:auto;">
+      Tres joyas de la gastronomía gaditana, elaboradas a mano
+      con los mejores pescados de la Bahía.
+    </p>
+
+    <div class="co-products">
+
+      <!-- Caballas en Aceite de Oliva -->
+      <article class="co-product">
+        <div class="co-product__image">
+          <img src="/wp-content/uploads/2026/05/caballas-1.png"
+               alt="Caballas en Aceite de Oliva — La Despensa del Almirante"
+               loading="lazy">
+        </div>
+        <div class="co-product__body">
+          <span class="co-product__tag">Producción limitada</span>
+          <h3 class="co-product__title">Caballas en Aceite de Oliva</h3>
+          <p class="co-product__desc">
+            Filetes de caballa en aceite de oliva virgen extra,
+            elaborados artesanalmente siguiendo la tradición desde los años 50.
+            Solo pescado fresco de la Bahía de Cádiz.
+            Rico en Omega 3 y vitaminas A, B, D y E.
+          </p>
+          <p class="co-product__format">Lata 255 g · 170 g escurrido</p>
+          <!-- ⚠️ Actualizar precio antes de publicar -->
+          <div class="co-price">00,00 € <span class="co-price__unit">/ lata</span></div>
+          <div class="co-btn-group">
+            <a href="#" class="co-btn">
+              <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al carrito
+            </a>
+            <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20Caballas%20en%20Aceite%20de%20Oliva%20de%20La%20Despensa%20del%20Almirante."
+               target="_blank" rel="noopener" class="co-btn co-btn--wa">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Caballas al Pedro Ximénez -->
+      <article class="co-product">
+        <div class="co-product__image">
+          <img src="/wp-content/uploads/2026/05/caballas-1.png"
+               alt="Caballas al Pedro Ximénez — La Despensa del Almirante"
+               loading="lazy">
+        </div>
+        <div class="co-product__body">
+          <span class="co-product__tag">Gourmet</span>
+          <h3 class="co-product__title">Caballas al Pedro Ximénez</h3>
+          <p class="co-product__desc">
+            La frescura del mar gaditano con el inconfundible sabor dulce
+            y aromático del prestigioso vino andaluz. Elaborada artesanalmente
+            respetando la tradición culinaria. Una experiencia gastronómica única.
+          </p>
+          <p class="co-product__format">Lata 255 g · 170 g escurrido</p>
+          <!-- ⚠️ Actualizar precio antes de publicar -->
+          <div class="co-price">00,00 € <span class="co-price__unit">/ lata</span></div>
+          <div class="co-btn-group">
+            <a href="#" class="co-btn">
+              <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al carrito
+            </a>
+            <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20Caballas%20al%20Pedro%20Jim%C3%A9nez%20de%20La%20Despensa%20del%20Almirante."
+               target="_blank" rel="noopener" class="co-btn co-btn--wa">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chicharrón de Atún -->
+      <article class="co-product">
+        <div class="co-product__image">
+          <img src="/wp-content/uploads/2026/05/caballas-1.png"
+               alt="Chicharrón de Atún — La Despensa del Almirante"
+               loading="lazy">
+        </div>
+        <div class="co-product__body">
+          <span class="co-product__tag">Especialidad gaditana</span>
+          <h3 class="co-product__title">Chicharrón de Atún</h3>
+          <p class="co-product__desc">
+            Joya gastronómica elaborada de forma artesanal. Inspirado en las
+            recetas más tradicionales de la costa gaditana: la jugosidad del
+            atún con un adobo suave y equilibrado. Perfecto solo, en tostas
+            o como aperitivo.
+          </p>
+          <p class="co-product__format">Lata 255 g · 170 g escurrido</p>
+          <!-- ⚠️ Actualizar precio antes de publicar -->
+          <div class="co-price">00,00 € <span class="co-price__unit">/ lata</span></div>
+          <div class="co-btn-group">
+            <a href="#" class="co-btn">
+              <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al carrito
+            </a>
+            <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesa%20el%20Chicharr%C3%B3n%20de%20At%C3%BAn%20de%20La%20Despensa%20del%20Almirante."
+               target="_blank" rel="noopener" class="co-btn co-btn--wa">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. SALUD Y NUTRICIÓN ────────────────────────────────────────────── -->
+<section class="co-section" data-da-block="salud">
+  <div class="co-container">
+    <h2 class="co-title co-title--section">Nutrición del mar en cada lata</h2>
+    <p class="co-text co-text--center co-mb-4"
+       style="max-width:700px;margin-left:auto;margin-right:auto;">
+      Las conservas de pescado azul de calidad conservan gran parte
+      de las propiedades nutricionales del producto fresco.
+    </p>
+
+    <div class="co-grid co-grid--4col">
+
+      <div class="co-card co-card--center">
+        <svg class="co-icon co-icon--xl co-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </svg>
+        <h3 class="co-title co-title--card">Omega 3</h3>
+        <p class="co-text">Ácidos grasos esenciales para la salud cardiovascular y cerebral.</p>
+      </div>
+
+      <div class="co-card co-card--center">
+        <svg class="co-icon co-icon--xl co-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+        <h3 class="co-title co-title--card">Vitaminas</h3>
+        <p class="co-text">Vitaminas A, B, D y E. Funcionamiento normal del sistema nervioso.</p>
+      </div>
+
+      <div class="co-card co-card--center">
+        <svg class="co-icon co-icon--xl co-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <h3 class="co-title co-title--card">Proteínas</h3>
+        <p class="co-text">Proteínas de alto valor biológico. Fuente completa de aminoácidos esenciales.</p>
+      </div>
+
+      <div class="co-card co-card--center">
+        <svg class="co-icon co-icon--xl co-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <h3 class="co-title co-title--card">Minerales</h3>
+        <p class="co-text">Fósforo, selenio y yodo. Contribuye a una alimentación equilibrada.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. CTA BAND ─────────────────────────────────────────────────────── -->
+<section class="co-section co-section--navy" data-da-block="cta">
+  <img class="co-cta__bg" src="/wp-content/uploads/2026/05/cta-coffee-beans.png"
+       alt="" aria-hidden="true" loading="lazy">
+  <div class="co-container">
+    <div class="co-cta">
+      <h2 class="co-cta__title">Cada lata conserva el sabor del mar y la historia de La Isla</h2>
+      <p class="co-text co-text--cream co-mb-cta" style="font-size:18px;">
+        El legado conservero de la Bahía de Cádiz en su forma más auténtica,
+        elaborado a mano desde los años 50.
+      </p>
+      <div class="co-btn-group">
+        <a href="#catalogo" class="co-btn">
+          <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Ver productos
+        </a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20conservas%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="co-btn co-btn--wa-ghost">
+          <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Hablar con Hugo (WhatsApp)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. CONTACTO ─────────────────────────────────────────────────────── -->
+<section class="co-section" data-da-block="contacto">
+  <div class="co-container">
+    <div class="co-contact">
+      <h3 class="co-contact__title">¿Pedido B2B o consulta sobre nuestras conservas?</h3>
+      <p class="co-text co-mb-cta">
+        Contacta con nosotros para pedidos especiales, distribución
+        o cualquier consulta sobre nuestras conservas artesanales.
+      </p>
+      <div class="co-btn-group" style="justify-content:center;">
+        <a href="mailto:info@ladespensadelalmirante.com" class="co-btn">Email</a>
+        <a href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20conservas%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+           target="_blank" rel="noopener" class="co-btn co-btn--wa-solid">
+          <svg class="co-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.co-page -->
+
+<!-- ── Botón back-to-top ───────────────────────────────────────────── -->
+<button type="button" class="cp-float-backtop" aria-label="Volver arriba"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+<script>
+(function(){
+  var b=document.querySelector('.cp-float-backtop');
+  if(!b)return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){b.classList.add('visible')}else{b.classList.remove('visible')}
+  },{passive:true});
+})();
+</script>
+
+<!-- ── Botón flotante WhatsApp ─────────────────────────────────────── -->
+<a class="cp-float-wa"
+   href="https://wa.me/34665029116?text=Hola%20Hugo%2C%20me%20interesan%20las%20conservas%20artesanales%20de%20La%20Despensa%20del%20Almirante."
+   target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
