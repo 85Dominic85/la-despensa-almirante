@@ -513,3 +513,51 @@ body.page-id-1398 footer.site-footer { display: none !important; }
   body.page-id-1398 .ao-section--navy .ao-cta__bg { display: none; }
   body.page-id-1398 .ao-award { flex-wrap: wrap; gap: 0.75rem; padding: 1.25rem; }
 }
+
+/* ── Premios: layout 2 columnas (lista + certificado) ───────────────── */
+body.page-id-1398 .ao-grid--awards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+@media (min-width: 960px) {
+  body.page-id-1398 .ao-grid--awards {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+/* Certificado BIOL Novello 2025 */
+body.page-id-1398 .ao-certificate {
+  position: sticky;
+  top: 32px;
+}
+body.page-id-1398 .ao-certificate__fig {
+  margin: 0;
+  background: var(--da-white, #FFFFFF);
+  border-radius: var(--da-radius-lg, 12px);
+  box-shadow: var(--da-shadow-md, 0 4px 12px rgba(42,52,62,0.08));
+  overflow: hidden;
+  transition: box-shadow var(--da-dur-base, 250ms) var(--da-ease, cubic-bezier(0.4,0,0.2,1)),
+              transform var(--da-dur-base, 250ms) var(--da-ease, cubic-bezier(0.4,0,0.2,1));
+}
+body.page-id-1398 .ao-certificate__fig:hover {
+  box-shadow: var(--da-shadow-lg, 0 12px 32px rgba(42,52,62,0.12));
+  transform: translateY(-4px);
+}
+body.page-id-1398 .ao-certificate__fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.page-id-1398 .ao-certificate__caption {
+  padding: 12px 16px;
+  font-family: var(--da-font-body, 'Inter', sans-serif);
+  font-size: 13px;
+  color: var(--da-gray-600, #4b5563);
+  text-align: center;
+  font-style: italic;
+}
+@media (max-width: 959px) {
+  body.page-id-1398 .ao-certificate { position: static; }
+}
